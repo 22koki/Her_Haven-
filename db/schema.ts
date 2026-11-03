@@ -1,4 +1,5 @@
 import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+export * from "./community-schema";
 
 // The private alpha keeps every record scoped to its creator. A shared
 // community requires explicit membership and staffed moderation rules.

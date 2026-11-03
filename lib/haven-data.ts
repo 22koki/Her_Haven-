@@ -16,7 +16,7 @@ export const RESPONSE_OPTIONS = [
   { id: 'no-replies', label: 'No replies for now', icon: 'Leaf', detail: 'Some space to share quietly.' },
 ] as const;
 
-export type ViewName = 'home' | 'living' | 'circles' | 'resources' | 'joy' | 'quiet' | 'saved' | 'space' | 'safety';
+export type ViewName = 'home' | 'living' | 'community' | 'circles' | 'resources' | 'joy' | 'quiet' | 'saved' | 'space' | 'safety';
 export interface DisplayPost { id: string; circleId: string; body: string; responsePreference: string; hideProfile: boolean; createdAt: string; author?: string; initial?: string; color?: string; sample?: boolean; title?: string; }
 
 export const SAMPLE_POSTS: DisplayPost[] = [

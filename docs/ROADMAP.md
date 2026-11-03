@@ -1,31 +1,31 @@
-# Her Haven: next stage
+# Her Haven: community pilot roadmap
 
-## Current release
+## Implemented in this stage
 
-A private, account-isolated alpha with real persistence and clearly fictional sample content. Every person's authored content is separate. Community sharing and contact between members are disabled.
+The original private-practice space remains isolated. A separate Community area now supports membership applications and approval, circle-gated shared posts/replies, explicit sharing consent, quiet attribution, no-replies posts, owner deletion, bilateral blocks, confidential reports, moderator content actions, membership suspension/restoration, and audit history. The database upgrade is additive and preserves existing private data.
 
-## Invitation-based member pilot
+Authentication continues to use the existing trusted sign-in. Signing in does not imply approved membership. Moderator roles are assigned through trusted operator access, never through registration or browser-submitted role fields.
 
-Before enabling shared content:
+## Before inviting a live group
 
-1. Define membership eligibility and approval, onboarding, age-assurance needs, suspension, and appeals.
-2. Establish an accountable women-led moderation team, coverage hours, incident triage, escalation, and referral processes.
-3. Add approved membership and circle-membership tables, with server-side checks for every shared read and write. Invitation possession alone must not imply approval or trust.
-4. Split personal drafts from explicitly shared posts. Show the exact audience before publication and provide removal/response controls.
-5. Replace the personal test report queue with confidential moderator assignments, audit history, status updates, and appeals. Test role boundaries and retaliation risks.
-6. Add rate limits and abuse prevention for onboarding, posting, replies, and reporting. Keep identity, account reputation, and gender claims distinct.
-7. Define retention, deletion, backup handling, operator access, security logging, incident response, and privacy documentation appropriate to the launch region.
-8. Verify support resources for the initial countries and maintain review dates. Do not promise emergency coverage without the people and infrastructure to provide it.
-9. Test with a small invited adult group, with realistic moderation staffing and member feedback. Do not seed fake accounts or manufacture engagement.
+1. Assign the first production moderator to the intended, verified account through trusted database administration. Run the additive migration and verify membership/application decisions on the target host.
+2. Establish an accountable women-led moderation team, coverage hours, reporting triage, escalation, and a clear route to request reconsideration. Suspended or declined members cannot reset themselves into approved status.
+3. Publish operating rules for privacy, consent, eligibility, moderation decisions, report-evidence retention, deletion, backups, and operator access. Membership approval is not identity or gender verification.
+4. Test the deployed application with separate invited accounts and actual sign-in sessions: pending access, approval, shared circle access, reporting, blocking, suspension, and deletion. Local simulation and SQLite tests are useful but do not replace this deployment check.
+5. Verify support resources for the initial countries and maintain review dates. Do not promise an emergency service without staffing and infrastructure.
+6. Start with a small invited adult group, gather feedback on comfort and control, and expand only when moderation capacity supports it. Do not manufacture community activity or seed undisclosed fake members.
 
-## Later, with dedicated arrangements
+## Next product improvements
 
-- Mutual-consent friendship requests and private messaging.
-- Facilitated sessions and professional events with credential checks and clear scope.
-- Localized content and language support based on member needs.
-- Skill exchanges with explicit boundaries, followed by separately chosen commercial areas if appropriate.
-- Offline events, commerce, fundraising, and financial services only after their additional operating requirements are understood.
+- A clear reconsideration/contact channel and moderator assignment/coverage tools.
+- Member notifications with explicit opt-in and quiet-hour controls.
+- Larger moderation/member lists with server-side filtering and pagination as the pilot grows beyond the current recent-list bounds.
+- Standalone authentication integration if hosting outside the trusted Sites boundary; public clients must never be allowed to choose identity headers.
+- Mutual-consent friendship requests and private messaging after separate abuse/privacy design.
+- Facilitated events and professional sessions with credential checks and clear scope.
+- More localized financial growth, work, beauty, wellbeing, and friendship resources based on member feedback.
+- Language support and accessibility improvements informed by actual participant needs.
 
 ## Product commitments
 
-Respect quiet participation. Make support preferences meaningful. Welcome women across backgrounds, including trans women. Never infer gender from appearance or voice. Protect members from unwanted selling, unsolicited advice, coercion, and shame. Keep ordinary joy beside difficult conversations. Measure whether members feel heard and can exercise choice; avoid rewarding time spent scrolling or intimate disclosure.
+Respect quiet participation. Keep support preferences meaningful. Welcome women across backgrounds, including trans women. Never infer gender from appearance or voice. Protect members from unwanted selling, unsolicited advice, coercion, and shame. Keep everyday joy beside difficult conversations. Measure whether members feel heard and can exercise choice; avoid rewarding time spent scrolling or intimate disclosure.

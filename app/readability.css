@@ -321,3 +321,12 @@ textarea::placeholder { color: #6d7665; }
 /* Keep the smallest phone layout balanced without reducing body text. */
 @media(max-width:360px){.hero-copy h1{font-size:42px;letter-spacing:-1.4px}.welcome-line>span{font-size:11px}.hero-copy>.eyebrow{font-size:9px;letter-spacing:1px}}
 .sidebar-bottom{padding-top:24px}
+
+/* A bridge from private reflection to deliberate community participation. */
+.home-community-invite { display: flex; align-items: center; gap: 22px; padding: 28px; margin: 32px 0 8px; border: 1px solid #dce4d8; background: #f0f4e9; }
+.home-community-invite h2 { margin: 5px 0 8px; font-family: var(--font-serif, Georgia, serif); font-size: 28px; color: #344d40; }
+.home-community-invite p:not(.eyebrow) { margin: 0; color: #526154; line-height: 1.7; max-width: 530px; }
+.home-community-invite .btn { flex-shrink: 0; }
+.community-invite-mark { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: #e0e9d7; color: #466548; flex-shrink: 0; }
+@media (max-width: 1050px) { .home-community-invite { flex-wrap: wrap; } .home-community-invite > div { flex: 1; min-width: 200px; } }
+@media (max-width: 500px) { .home-community-invite { padding: 22px; gap: 15px; } .home-community-invite > div { min-width: 0; flex-basis: 100%; } .home-community-invite .btn { width: 100%; } }
