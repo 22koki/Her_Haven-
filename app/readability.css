@@ -1,0 +1,323 @@
+/* Loaded last: readable copy and controls without changing the editorial layout.
+   #626c5c has 5.27:1 contrast on #fbfaf7, 4.80:1 on #edf1e7,
+   and 4.56:1 on the darker sand surface #f1e9dc. */
+:root { --muted: #626c5c; }
+
+.muted,
+.hero-description,
+.section-subtitle,
+.tiny-note,
+.welcome-line,
+.breadcrumb,
+.breadcrumb strong,
+.gentle-toggle,
+.hero-footnote,
+.hero-image-note,
+.arrival-copy > span,
+.circle-card-content > p:not(.eyebrow),
+.post-byline > span,
+.post-text,
+.sample-note,
+.home-footer,
+.home-footer > button,
+.page-heading p:not(.eyebrow),
+.alpha-notice,
+.listening-card p,
+.listening-rule,
+.helpful-card > p:not(.eyebrow),
+.circles-intro > span,
+.circles-note p,
+.empty-state p,
+.field-hint,
+.setting-row,
+.setting-row p,
+.report-row p,
+.empty-inline,
+.gentle-note,
+.dialog-intro,
+.check-field,
+.check-field small,
+.privacy-line,
+.dialog-footnote,
+.signin-prompt p,
+.textarea-footer,
+.response-option,
+.response-option small,
+.compose-audience,
+.compose-audience small,
+.detail-author,
+.detail-body,
+.support-preference,
+.support-preference p,
+.reply-bubble strong,
+.reply-bubble strong span,
+.reply-bubble p,
+.quiet-post-note { color: #626c5c; }
+
+.hero-description,
+.post-text,
+.detail-body,
+.reply-bubble p,
+.page-heading p:not(.eyebrow),
+.dialog-intro,
+.signin-prompt p { font-size: 14px; line-height: 1.8; }
+
+.section-subtitle,
+.circle-card-content > p:not(.eyebrow),
+.circle-compact .circle-card-content > p:not(.eyebrow),
+.full-circle-grid .circle-card-content > p:not(.eyebrow),
+.alpha-notice,
+.listening-card p,
+.helpful-card > p:not(.eyebrow),
+.circles-note p,
+.empty-state p,
+.settings-profile p,
+.settings-panel > .muted,
+.field-label,
+.setting-row strong,
+.setting-row p,
+.report-row p,
+.empty-inline,
+.check-field,
+.compose-audience strong,
+.support-preference strong,
+.support-preference p,
+.quiet-post-note { font-size: 13px; line-height: 1.75; }
+
+.eyebrow,
+.hero-copy > .eyebrow,
+.home-circles .section-heading .eyebrow,
+.circle-card-content .eyebrow,
+.circle-compact .circle-card-content .eyebrow,
+.full-circle-grid .circle-card-content .eyebrow,
+.page-heading > .eyebrow,
+.gentle-reminder .eyebrow,
+.helpful-card > .eyebrow { font-size: 11px; letter-spacing: 1.35px; color: #626c5c; }
+
+.nav-label,
+.sidebar .nav-label,
+.brand small,
+.sidebar-note > span { font-size: 10px; color: #626c5c; letter-spacing: 1.25px; }
+.nav-item,
+.sidebar .nav-item { font-size: 13px; color: #626c5c; }
+.nav-item.nav-active { color: var(--sage-dark); }
+.sidebar-help { font-size: 12px; color: #626c5c; }
+.quick-exit { font-size: 11px; color: #626c5c; }
+.sidebar-note p { color: #5d6d50; }
+.welcome-line { font-size: 13px; }
+.breadcrumb { font-size: 12px; }
+.gentle-toggle { font-size: 12px; }
+.alpha-label { font-size: 10px; letter-spacing: .9px; color: #626c5c; }
+.hero-footnote,
+.hero-image-note,
+.tiny-note,
+.post-byline > span,
+.sample-note,
+.home-footer,
+.home-footer > button,
+.circles-intro > span:last-child,
+.field-hint,
+.check-field small,
+.privacy-line,
+.dialog-footnote,
+.textarea-footer,
+.detail-author .muted,
+.reply-bubble strong span { font-size: 11px; line-height: 1.7; }
+
+.haven-app .btn,
+.haven-dialog .btn { min-height: 44px; font-size: 13px; }
+.hero-secondary,
+.text-button,
+.home-circles .section-heading > .text-button,
+.home-lower .section-heading .text-button,
+.circle-card-footer .text-button,
+.full-circle-grid .circle-card-footer .text-button,
+.post-bottom .text-button,
+.listening-card > .text-button,
+.helpful-card > .text-button,
+.gentle-reminder > .text-button { font-size: 12px; color: #52694b; }
+.circle-card-footer { flex-wrap: wrap; gap: 9px; }
+.join-button,
+.save-button { font-size: 12px; color: #52694b; }
+.save-button.is-saved { color: #3f5d37; }
+.icon-button { color: #626c5c; }
+.post-menu > button { font-size: 13px; }
+.post-byline strong { font-size: 13px; color: #4f5e45; }
+.response-label,
+.tag { font-size: 11px; color: #52694b; line-height: 1.6; }
+.response-listen { color: #8d5e52; }
+.response-celebrate { color: #776432; }
+.response-option strong { font-size: 12px; }
+.response-option small { font-size: 11px; line-height: 1.6; }
+.response-fieldset legend { font-size: 13px; color: #52694b; }
+.compose-audience small { font-size: 12px; line-height: 1.7; }
+.reply-bubble strong { font-size: 12px; }
+.gentle-reminder blockquote { color: #60724f; }
+.gentle-reminder blockquote em { color: #687650; }
+.gentle-reminder > p:not(.eyebrow) { font-size: 13px; color: #626c5c; }
+.connection-banner { font-size: 13px; color: #79623e; }
+.form-error { font-size: 13px; color: #8d5041; }
+.toast { font-size: 13px; color: #52694b; }
+.filter-tabs > button { font-size: 12px; color: #626c5c; padding: 8px 10px; }
+.filter-tabs > button.selected { color: #49613f; }
+.feed-tools > select { font-size: 13px; }
+/* The original search rule is important; this one targeted override is needed. */
+.search-field input { font-size: 14px !important; }
+input::placeholder,
+textarea::placeholder { color: #6d7665; }
+.arrival-copy { min-width: 0; }
+.arrival-copy > strong { font-size: 14px; white-space: normal; line-height: 1.45; }
+.arrival-copy > span { font-size: 11px; white-space: normal; line-height: 1.55; }
+.arrival-card { min-height: 88px; }
+
+/* Supporting pages: keep long instructions and safety information comfortable. */
+.exp-guide > summary > p,
+.exp-guide-content ol,
+.exp-guide-content > p,
+.exp-soft-note p,
+.exp-joy-corner > p.muted,
+.exp-safety-card p,
+.exp-promises p,
+.exp-safety-faq details > p,
+.exp-safety-resources > div > p.muted { font-size: 13px; line-height: 1.85; color: #626c5c; }
+.exp-safety-resources > a > span > span,
+.exp-script-privacy { font-size: 12px; line-height: 1.75; }
+.exp-guide > summary > .eyebrow,
+.exp-joy-corner > .eyebrow,
+.exp-chosen .eyebrow { font-size: 11px; color: #626c5c; }
+.exp-guide-link,
+.exp-joy-corner > button,
+.exp-safety-faq details > a,
+.exp-joy-ending,
+.exp-joy-ending button,
+.exp-quiet-bottom .text-button,
+.exp-safety-ending > p,
+.exp-safety-ending > button { font-size: 13px; }
+.exp-choice,
+.exp-joy-deck .exp-choice,
+.exp-duration .exp-choice { font-size: 12px; }
+.exp-timer-status,
+.exp-pause-center > h2 { font-size: 13px; }
+.exp-safety-faq summary { font-size: 14px; }
+
+@media (max-width: 1180px) {
+  .arrival-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-description { max-width: 370px; }
+  .hero-actions { row-gap: 15px; }
+}
+
+@media (max-width: 760px), (pointer: coarse) {
+  .icon-button,
+  .header-avatar,
+  .exp-icon-button { min-width: 44px; min-height: 44px; }
+  .gentle-toggle,
+  .sidebar-help,
+  .quick-exit,
+  .text-button,
+  .join-button,
+  .save-button,
+  .filter-tabs > button,
+  .post-menu > button,
+  .home-footer > button,
+  .exp-choice { min-height: 44px; }
+  .text-button,
+  .save-button,
+  .join-button { padding-block: 6px; }
+  .post-menu { top: 45px; }
+  .toast > button { min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
+  .switch { position: relative; width: 44px; height: 44px; padding: 0; background: transparent; }
+  .switch::before { content: ''; position: absolute; width: 35px; height: 21px; top: 11.5px; left: 4.5px; background: #e2e7d9; border-radius: 18px; }
+  .switch > i { position: absolute; top: 14.5px; left: 7.5px; margin: 0; }
+  .switch-on { background: transparent; }
+  .switch-on::before { background: #5d765d; }
+}
+
+@media (max-width: 760px) {
+  .hero-description,
+  .post-text,
+  .detail-body,
+  .reply-bubble p,
+  .page-heading p:not(.eyebrow),
+  .dialog-intro { font-size: 14px; }
+  .alpha-notice,
+  .check-field,
+  .setting-row p,
+  .settings-profile p,
+  .empty-state p { font-size: 13px; }
+  .home-footer { align-items: flex-start; }
+  .home-footer > button { margin-left: 0; }
+  .section-heading { align-items: flex-start; }
+  .home-lower .section-heading .text-button { white-space: normal; margin-top: 0; }
+  .hero-actions .btn { font-size: 13px; }
+  .full-circle-grid .circle-card-content { min-height: auto; }
+  input:not([type='checkbox']):not([type='radio']),
+  select,
+  textarea { font-size: 16px; }
+  .search-field input { font-size: 16px !important; }
+  .feed-tools > select { font-size: 13px; }
+  .exp-guide > summary > p,
+  .exp-guide-content ol,
+  .exp-joy-corner > p.muted,
+  .exp-safety-card p,
+  .exp-promises p,
+  .exp-safety-faq details > p { font-size: 14px; }
+}
+
+@media (max-width: 520px) {
+  .topbar { padding-inline: 14px; gap: 8px; }
+  .header-leading { min-width: 0; }
+  .mobile-menu-button { margin-right: 6px; }
+  .topbar-right { gap: 8px; }
+  .breadcrumb { font-size: 0; gap: 0; }
+  .breadcrumb > svg { display: none; }
+  .breadcrumb strong { font-size: 12px; max-width: 90px; }
+  .gentle-toggle { font-size: 11px; gap: 5px; }
+  .gentle-toggle > span:not(.tiny-switch) { max-width: 77px; text-align: left; line-height: 1.5; }
+  .tiny-switch { flex-shrink: 0; }
+  .welcome-line { font-size: 12px; gap: 12px; align-items: flex-start; }
+  .alpha-label { font-size: 10px; flex-shrink: 0; padding: 5px 7px; }
+  .hero-copy > .eyebrow { font-size: 11px; letter-spacing: 1.2px; }
+  .hero-secondary { font-size: 12px; }
+  .arrival-card { padding: 14px 10px; }
+  .arrival-copy > strong { font-size: 14px; }
+  .arrival-copy > span { font-size: 11px; }
+  .home-circles .section-heading > .text-button { font-size: 12px; white-space: normal; margin-bottom: 0; }
+  .circle-compact { grid-template-columns: 88px minmax(0, 1fr); }
+  .circle-compact .circle-card-content { padding: 16px 14px 13px; }
+  .circle-compact .circle-card-content > p:not(.eyebrow) { font-size: 13px; line-height: 1.8; }
+  .circle-compact .circle-card-content .eyebrow { font-size: 11px; letter-spacing: .9px; }
+  .post-byline > span { font-size: 11px; }
+  .post-bottom .text-button,
+  .save-button { font-size: 12px; }
+  .sample-note { font-size: 11px; }
+  .page-heading > .eyebrow { font-size: 11px; }
+  .circles-intro > span:first-child { font-size: 13px; }
+  .circles-intro > span:last-child { font-size: 11px; }
+  .circles-note p { font-size: 13px; }
+  .response-options { grid-template-columns: 1fr; }
+  .response-option { min-height: 58px; padding: 12px; gap: 10px; }
+  .response-option strong { font-size: 13px; }
+  .response-option small { font-size: 12px; }
+  .response-option > input { width: 17px; height: 17px; }
+  .check-field { min-height: 44px; }
+  .dialog-footnote,
+  .textarea-footer { font-size: 11px; }
+  .toast { font-size: 13px; }
+  .exp-choice,
+  .exp-joy-deck .exp-choice,
+  .exp-duration .exp-choice { font-size: 12px; }
+  .exp-safety-faq summary { font-size: 14px; }
+}
+
+@media (max-width: 380px) {
+  .gentle-toggle > svg { display: none; }
+  .breadcrumb strong { max-width: 70px; }
+  .arrival-grid { grid-template-columns: 1fr; }
+  .arrival-card { min-height: 72px; padding-inline: 17px; gap: 13px; }
+  .arrival-copy > span { font-size: 12px; }
+  .arrival-arrow { display: block; }
+}
+
+/* Keep the smallest phone layout balanced without reducing body text. */
+@media(max-width:360px){.hero-copy h1{font-size:42px;letter-spacing:-1.4px}.welcome-line>span{font-size:11px}.hero-copy>.eyebrow{font-size:9px;letter-spacing:1px}}
+.sidebar-bottom{padding-top:24px}
