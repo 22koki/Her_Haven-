@@ -2,7 +2,11 @@
 
 A warm, responsive first build of a women-centered community: **come as you are, find your people, and grow at your own pace.**
 
-![Her Haven home screen](docs/images/home.png)
+## Visual direction
+
+A warm editorial design combines deep plum, cream, terracotta, sage, lilac, and gold. Visitor and member welcome panels frame the original illustration with layered botanical details. Coloured mood tiles, a personal-step card, a private journal, and four useful destination cards give My haven a clear daily rhythm.
+
+The design continues through the sidebar, community, writing prompts, joy corner, and the plum-and-gold quiet-room timer. Phone layouts retain the artwork and readable controls; gentle mode and reduced-motion preferences remove decorative movement.
 
 ## What this release does
 

@@ -36,6 +36,20 @@ const DIRECTIONS: Record<MomentNeed, { title: string; body: string; action: stri
   joy: { title: 'Room for a good moment.', body: 'Choose something creative or playful. You do not have to earn a little enjoyment.', action: 'Visit the joy corner', view: 'joy', icon: Sparkles },
   unsure: { title: 'You can begin with a pause.', body: 'You do not have to know what you need yet. A quiet moment is a place to start.', action: 'Take a quiet moment', view: 'quiet', icon: Leaf },
 };
+const PATHWAYS = [
+  { view: 'quiet', label: 'Take a breath', detail: 'The quiet room', icon: Wind, tone: 'lilac' },
+  { view: 'community', label: 'Find your people', detail: 'Your community', icon: UsersRound, tone: 'rose' },
+  { view: 'resources', label: 'Grow a little', detail: 'Work, life & words', icon: Sprout, tone: 'sage' },
+  { view: 'joy', label: 'Make room for joy', detail: 'The joy corner', icon: Sun, tone: 'gold' },
+] as const;
+
+function BotanicalBranch({ className = '' }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 160 240" fill="none" aria-hidden="true" focusable="false">
+    <path d="M82 225C76 185 71 138 83 92C91 61 111 31 124 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    <path d="M79 192C49 194 25 178 19 153C46 150 71 165 79 192Z M77 162C98 146 122 147 139 157C126 178 98 182 77 162Z M77 128C50 127 32 108 32 86C57 91 75 104 77 128Z M85 103C108 83 136 87 149 101C130 118 104 119 85 103Z M100 61C77 60 61 45 64 24C88 31 98 43 100 61Z M110 41C128 24 147 27 155 34C145 51 129 56 110 41Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+    <path d="M23 157L78 191M81 162L134 158M37 90L77 128M87 102L143 101M69 29L100 61M113 42L150 35" stroke="currentColor" strokeWidth="1" opacity=".6" />
+  </svg>;
+}
 
 function localDay() {
   const now = new Date();
@@ -233,9 +247,29 @@ export function DailyHaven({ displayName, onNavigate, notify }: Props) {
 
   return <section className="daily-haven" aria-labelledby="daily-haven-title">
     <header className="daily-intro">
-      <div className="daily-intro-copy"><p className="daily-eyebrow">YOUR OWN LITTLE CORNER</p><p className="daily-hello">Welcome back, {displayName}.</p><h1 id="daily-haven-title">A little room<br /><em>for today.</em></h1><p className="daily-intro-description">Notice where you are. Choose one small thing.<br className="daily-desktop-break" /> There is no need to do it all.</p><div className="daily-date"><CalendarDays size={16} aria-hidden="true" /><time dateTime={day}>{dayLabel(day, true)}</time><span>Your local day</span></div></div>
-      <div className="daily-intro-art" aria-hidden="true"><div className="daily-art-circle" /><img src="/images/hero-gathering.webp" alt="" /><span>room for every version of you</span></div>
+      <div className="daily-intro-copy">
+        <p className="daily-eyebrow daily-hero-kicker"><Sparkles size={15} aria-hidden="true" />YOUR OWN LITTLE CORNER</p>
+        <p className="daily-hello">Welcome back, {displayName}.</p>
+        <h1 id="daily-haven-title">A little room<br /><em>for today.</em></h1>
+        <p className="daily-intro-description">Notice where you are. Choose one small thing.<br className="daily-desktop-break" /> There is no need to do it all.</p>
+        <div className="daily-hero-actions"><button className="btn btn-primary" type="button" onClick={() => {
+          const heading = checkInHeading.current;
+          heading?.scrollIntoView({ behavior: 'instant', block: 'start' });
+          heading?.focus({ preventScroll: true });
+        }}>A moment for me <Heart size={16} aria-hidden="true" /></button><button className="daily-hero-link" type="button" disabled={actionBusy !== null} onClick={() => onNavigate('quiet')}><span><Wind size={17} aria-hidden="true" /></span>Just take a breath</button></div>
+        <div className="daily-date"><CalendarDays size={16} aria-hidden="true" /><time dateTime={day}>{dayLabel(day, true)}</time><span>Your local day</span></div>
+      </div>
+      <div className="daily-intro-art" aria-hidden="true">
+        <span className="daily-art-disc" /><span className="daily-art-orbit" />
+        <BotanicalBranch className="daily-hero-botanical" />
+        <div className="daily-art-frame"><img src="/images/hero-gathering.webp" alt="" /><span className="daily-art-caption">a little more together</span></div>
+        <span className="daily-art-stamp"><Flower2 size={31} strokeWidth={1.2} /><span>COME AS<br />YOU ARE</span></span>
+        <span className="daily-art-note"><Heart size={17} strokeWidth={1.4} />nothing to prove.<br />room to just be.</span>
+        <span className="daily-art-star daily-art-star-one">✦</span><span className="daily-art-star daily-art-star-two">✧</span>
+      </div>
     </header>
+
+    <nav className="daily-pathways" aria-label="Choose a place in Her Haven">{PATHWAYS.map(place => { const PlaceIcon = place.icon; return <button className={`daily-pathway daily-pathway-${place.tone}`} type="button" key={place.view} disabled={actionBusy !== null} onClick={() => onNavigate(place.view)}><span className="daily-pathway-icon"><PlaceIcon size={27} strokeWidth={1.45} aria-hidden="true" /></span><span className="daily-pathway-copy"><strong>{place.label}</strong><span>{place.detail}</span></span><ArrowRight className="daily-pathway-arrow" size={18} aria-hidden="true" /></button>; })}</nav>
 
     <div className="daily-privacy"><LockKeyhole size={17} aria-hidden="true" /><p><strong>Just for your own reflection.</strong> Saved to your account. Never posted to circles or the Care desk.</p><button className="daily-refresh" type="button" disabled={busy} onClick={() => { syncCalendarDay(); setRefresh(value => value + 1); }} aria-label="Refresh private check-ins and goal"><RefreshCw size={17} aria-hidden="true" /></button></div>
 
@@ -268,7 +302,7 @@ export function DailyHaven({ displayName, onNavigate, notify }: Props) {
           </form> : goal && <div className="daily-goal-summary"><span className="daily-area-label">{AREAS.find(area => area.id === goal.area)?.label ?? goal.area}</span>{goal.completed && <span className="daily-goal-complete-mark"><CheckCircle2 size={25} strokeWidth={1.5} aria-hidden="true" />That counts.</span>}<h3>{goal.title}</h3><p className="daily-goal-message">{goal.completed ? 'A little thing you made room for. You can simply enjoy that.' : 'A small intention, with room for life to happen around it.'}</p><button className={`btn ${goal.completed ? 'btn-secondary' : 'btn-primary'} daily-complete-button`} type="button" disabled={busy} onClick={async () => { await runAction({ action: 'goal-completion', id: goal.id, completed: !goal.completed }, 'goal', goal.completed ? 'Your step is open again. Take your time.' : 'Your small step is complete. That counts.'); }}><CheckCircle2 size={17} aria-hidden="true" />{goal.completed ? 'Keep working on it' : 'Mark this step complete'}</button><div className="daily-goal-tools"><button className="daily-link" type="button" disabled={busy} onClick={() => editGoal(goal.completed)}><Pencil size={15} aria-hidden="true" />{goal.completed ? 'Choose another step' : 'Change my step'}</button><button className="daily-icon-action" type="button" aria-label="Remove saved goal" disabled={busy} onClick={() => setRemoval({ kind: 'goal', id: goal.id })}><Trash2 size={17} aria-hidden="true" /></button></div>{removal?.kind === 'goal' && <ConfirmRemoval title="Remove this saved step?" message="This removes the goal and its completion state from your account. You cannot undo it here." busy={busy} onCancel={cancelRemoval} onConfirm={() => void removeSaved()} />}{errorFor('goal')}</div>}
         </section>
 
-        <aside className={`daily-direction daily-direction-${selectedNeed}`} aria-label="A place you can choose"><DirectionIcon size={27} strokeWidth={1.4} aria-hidden="true" /><p className="daily-eyebrow">ROOM FOR WHAT YOU NEED</p><h2>{direction.title}</h2><p>{direction.body}</p><button className="daily-link" type="button" disabled={actionBusy !== null} onClick={() => onNavigate(direction.view)}>{direction.action}<ArrowRight size={16} aria-hidden="true" /></button><span className="daily-direction-note">An invitation, never a task.</span></aside>
+        <aside className={`daily-direction daily-direction-${selectedNeed}`} aria-label="A place you can choose"><BotanicalBranch className="daily-direction-botanical" /><DirectionIcon className="daily-direction-symbol" size={30} strokeWidth={1.4} aria-hidden="true" /><p className="daily-eyebrow">ROOM FOR WHAT YOU NEED</p><h2>{direction.title}</h2><p>{direction.body}</p><button className="daily-link" type="button" disabled={actionBusy !== null} onClick={() => onNavigate(direction.view)}>{direction.action}<ArrowRight size={16} aria-hidden="true" /></button><span className="daily-direction-note">An invitation, never a task.</span></aside>
       </div>
     </div>
 

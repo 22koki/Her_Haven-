@@ -1,296 +1,443 @@
+/* Member home: an editorial, warm sanctuary. Styles stay inside DailyHaven. */
 .daily-haven {
-  --daily-muted: #626c60;
-  --daily-border: #e1e5da;
-  --daily-focus: #426344;
-  margin: 0 0 28px;
+  --daily-plum: #472b43;
+  --daily-rose: #b96556;
+  --daily-cream: #fcf7f0;
+  --daily-blush: #f3ded6;
+  --daily-sage: #dfe6d3;
+  --daily-lilac: #eae0f0;
+  --daily-gold: #d4aa59;
+  --daily-muted: #705967;
+  --daily-border: #dfcfd5;
+  --daily-focus: #472b43;
+  container-name: daily-haven;
+  container-type: inline-size;
+  margin: 0 0 32px;
   min-width: 0;
+  color: var(--daily-plum);
 }
 .daily-haven *, .daily-haven *::before, .daily-haven *::after { box-sizing: border-box; }
-.daily-haven button, .daily-haven a, .daily-haven summary { -webkit-tap-highlight-color: transparent; }
-.daily-haven button:not(:disabled):focus-visible, .daily-haven a:focus-visible, .daily-haven summary:focus-visible { outline: 2px solid var(--daily-focus); outline-offset: 4px; }
-.daily-haven button:disabled { cursor: not-allowed; }
-.daily-haven .btn, .daily-haven .daily-link { min-height: 44px; font-size: 12px; }
-.daily-haven .btn { padding: 11px 15px; }
-.daily-haven .btn-primary { background: #557151; border-color: #557151; color: #fffef8; }
-.daily-haven .btn-primary:hover:not(:disabled) { background: #405b3d; border-color: #405b3d; }
-.daily-haven .btn-secondary { background: #fafbf7; border-color: #cfd9c8; color: #405b3d; }
-.daily-haven h2[tabindex="-1"]:focus { outline: none; }
 .daily-haven p, .daily-haven h1, .daily-haven h2, .daily-haven h3 { overflow-wrap: anywhere; }
-.daily-haven .daily-eyebrow { color: #67745f; font-size: 9px; font-weight: 600; letter-spacing: 1.65px; line-height: 1.6; }
-.daily-intro { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(240px, .8fr); gap: 20px; align-items: center; padding: 36px 0 31px; }
-.daily-intro-copy { min-width: 0; position: relative; z-index: 1; }
-.daily-hello { margin: 17px 0 8px; color: #65705f; font-size: 14px; }
-.daily-intro h1 { font-family: var(--serif); color: #344334; font-weight: 400; font-size: clamp(38px, 4.2vw, 59px); line-height: 1.12; letter-spacing: -1.9px; }
-.daily-intro h1 em { color: #748568; font-weight: 400; }
-.daily-intro-description { margin-top: 17px; color: #616b5b; font-size: 14px; line-height: 1.85; }
-.daily-date { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; color: #63735b; font-size: 11px; margin-top: 22px; }
-.daily-date > svg { flex-shrink: 0; }
-.daily-date > span { color: #697061; border-left: 1px solid #d9dece; padding-left: 9px; font-size: 10px; }
-.daily-intro-art { position: relative; min-width: 0; display: grid; place-items: center; align-self: stretch; }
-.daily-art-circle { position: absolute; width: 78%; aspect-ratio: 1; max-height: 245px; border-radius: 50%; background: #f0f0e6; border: 1px solid #e8eadc; }
-.daily-intro-art img { position: relative; width: 112%; max-width: 112%; max-height: 250px; object-fit: contain; mix-blend-mode: multiply; }
-.daily-intro-art > span { position: absolute; bottom: 12px; right: 5%; font-family: var(--serif); font-size: 12px; font-style: italic; color: #827c65; transform: rotate(-4deg); }
-.daily-privacy { display: flex; align-items: center; gap: 11px; padding: 13px 16px; margin-bottom: 22px; border: 1px solid #dfe6d7; border-radius: 10px; background: #eef3e8; color: #506448; }
-.daily-privacy > svg { flex-shrink: 0; }
-.daily-privacy p { font-size: 12px; line-height: 1.65; }
-.daily-privacy strong { font-weight: 600; margin-right: 3px; }
-.daily-refresh { width: 44px; height: 44px; min-width: 44px; border-radius: 50%; margin: -5px -7px -5px auto; display: grid; place-items: center; color: #536b4d; }
-.daily-refresh:hover:not(:disabled) { background: #e0e9d7; }
-.daily-grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(260px, 1fr); gap: 22px; align-items: start; }
-.daily-card { background: #fffefa; border: 1px solid var(--daily-border); border-radius: 17px; padding: 26px; min-width: 0; }
-.daily-card-heading { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.daily-card-heading > div { min-width: 0; flex: 1; }
-.daily-card-heading h2 { font-size: 26px; font-weight: 400; color: #394b36; margin-top: 3px; letter-spacing: -.7px; line-height: 1.3; }
-.daily-card-mark { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0; }
-.daily-mark-rose { background: #f4e8e1; color: #8b6556; }
-.daily-mark-sage { background: #e9efdf; color: #607652; }
-.daily-card-intro { margin: 17px 0 24px; color: var(--daily-muted); font-size: 12px; line-height: 1.8; }
-.daily-saved { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; color: #526d48; font-weight: 500; flex-shrink: 0; }
-.daily-fieldset { border: 0; padding: 0; margin: 0 0 23px; min-width: 0; }
-.daily-fieldset legend { color: #44543d; font-size: 13px; font-weight: 550; margin: 0 0 12px; padding: 0; }
-.daily-fieldset:disabled { opacity: .65; }
-.daily-moods { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
-.daily-mood-lilac { --daily-tone: #f0eaf4; --daily-tone-ink: #746082; --daily-tone-border: #b6a3c2; }
-.daily-mood-blue { --daily-tone: #eaf0f1; --daily-tone-ink: #536f75; --daily-tone-border: #a6bbbe; }
-.daily-mood-sage { --daily-tone: #ecf1e5; --daily-tone-ink: #5d734b; --daily-tone-border: #a7b88f; }
-.daily-mood-peach { --daily-tone: #f8ede2; --daily-tone-ink: #8a684b; --daily-tone-border: #cbb194; }
-.daily-mood-gold { --daily-tone: #f7f0d9; --daily-tone-ink: #83713b; --daily-tone-border: #c8bc87; }
-.daily-mood { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; min-height: 105px; padding: 18px 7px 12px; border: 1px solid #e0e5d9; border-radius: 12px; position: relative; cursor: pointer; color: var(--daily-tone-ink); background: #fcfcf7; transition: background .18s ease, border-color .18s ease, transform .18s ease; }
-.daily-mood > span { color: #535e4d; font-size: 11px; font-weight: 500; line-height: 1.5; }
-.daily-mood input, .daily-need input { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-.daily-mood .daily-choice-tick { position: absolute; right: 6px; top: 6px; opacity: 0; }
-.daily-mood.is-selected { border-color: var(--daily-tone-border); background: var(--daily-tone); box-shadow: inset 0 0 0 1px var(--daily-tone-border); }
-.daily-mood.is-selected .daily-choice-tick { opacity: 1; }
-.daily-mood:has(input:focus-visible), .daily-need:has(input:focus-visible) { outline: 2px solid var(--daily-focus); outline-offset: 3px; }
-.daily-mood:hover:has(input:not(:disabled)) { background: var(--daily-tone); transform: translateY(-2px); }
-.daily-needs { display: flex; flex-wrap: wrap; gap: 8px; }
-.daily-need { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 9px 12px; position: relative; border: 1px solid #e0e5d9; border-radius: 8px; color: #64715b; font-size: 11px; cursor: pointer; }
-.daily-need > svg { flex-shrink: 0; }
-.daily-need.is-selected { border-color: #95aa84; background: #edf3e4; color: #3d5c32; }
-.daily-need:hover:has(input:not(:disabled)) { background: #f2f5eb; }
-.daily-label { display: block; color: #46553e; font-size: 12px; font-weight: 550; margin: 20px 0 9px; }
-.daily-label > span { font-weight: 400; color: #697260; font-size: 10px; margin-left: 5px; }
-.daily-haven input:not([type="radio"]), .daily-haven select, .daily-haven textarea { border-color: #d8dfce; border-radius: 9px; color: #3e4b36; background: #fcfcf8; font-size: 13px; line-height: 1.7; }
-.daily-haven textarea { min-height: 113px; padding: 12px 14px; }
-.daily-haven input::placeholder, .daily-haven textarea::placeholder { color: #767d6e; opacity: 1; }
-.daily-haven input:disabled, .daily-haven select:disabled, .daily-haven textarea:disabled { opacity: .65; cursor: not-allowed; }
-.daily-field-footer { display: flex; justify-content: space-between; gap: 15px; color: #697260; font-size: 10px; line-height: 1.65; margin-top: 7px; }
-.daily-field-footer > span:last-child { flex-shrink: 0; font-variant-numeric: tabular-nums; }
-.daily-save-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
-.daily-draft-status { color: #6e7665; font-size: 10px; line-height: 1.65; }
-.daily-save-row .daily-draft-status { margin-left: auto; }
-.daily-link { display: inline-flex; align-items: center; justify-content: flex-start; gap: 7px; padding: 8px 0; color: #4f6d43; font-weight: 500; text-align: left; line-height: 1.6; }
-.daily-link:hover:not(:disabled) { color: #2e4d24; }
-.daily-side { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
-.daily-goal { background: #f8faf3; padding: 25px 23px; }
-.daily-goal .daily-card-mark { width: 40px; height: 40px; }
-.daily-goal .daily-card-heading { gap: 10px; }
-.daily-goal .daily-card-heading h2 { font-size: 25px; }
-.daily-goal .daily-eyebrow { font-size: 8px; letter-spacing: 1.15px; }
-.daily-goal .daily-card-intro { margin-bottom: 20px; }
-.daily-goal-hint { margin-top: 12px; color: #67735d; font-size: 11px; line-height: 1.75; }
-.daily-goal-form-actions { display: flex; flex-direction: column; align-items: stretch; gap: 5px; margin-top: 19px; }
-.daily-goal-form-actions .daily-link { justify-content: center; }
-.daily-goal form > .daily-draft-status { margin-top: 10px; }
-.daily-area-label { display: inline-block; padding: 5px 9px; border: 1px solid #dce5d2; border-radius: 6px; background: #f0f5e8; color: #4c663e; font-size: 10px; }
-.daily-goal-summary > h3 { font-family: var(--serif); color: #3f5435; font-size: 24px; line-height: 1.5; letter-spacing: -.4px; font-weight: 400; margin-top: 15px; }
-.daily-goal-message { color: #697460; font-size: 12px; line-height: 1.8; margin-top: 13px; }
-.daily-complete-button { width: 100%; margin-top: 24px; }
-.daily-goal-tools { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 7px; }
-.daily-goal-complete-mark { display: flex; align-items: center; gap: 9px; color: #577547; font-family: var(--serif); font-size: 24px; margin-top: 22px; }
-.daily-goal-done { background: #edf4e5; border-color: #d2dfc6; }
-.daily-goal-done .daily-area-label { background: #f5f9f0; }
-.daily-goal-done .daily-goal-summary > h3 { margin-top: 12px; }
-.daily-direction { padding: 24px 25px; border: 1px solid #e5dce9; border-radius: 15px; background: #f1ecf4; color: #705c78; min-width: 0; }
-.daily-direction > svg { margin-bottom: 10px; }
-.daily-direction .daily-eyebrow { font-size: 8px; letter-spacing: 1.3px; color: #786381; }
-.daily-direction h2 { color: #5e4966; font-size: 25px; font-weight: 400; line-height: 1.35; margin-top: 8px; letter-spacing: -.5px; }
-.daily-direction > p:not(.daily-eyebrow) { color: #69596f; font-size: 12px; line-height: 1.85; margin-top: 12px; }
-.daily-direction .daily-link { color: #62456f; margin-top: 15px; }
-.daily-direction-note { display: block; font-size: 10px; color: #76667d; margin-top: 5px; }
-.daily-direction-connection { background: #f6eae4; border-color: #e9dcd2; color: #8b6b58; }
-.daily-direction-connection h2 { color: #73553f; }
-.daily-direction-connection .daily-eyebrow, .daily-direction-connection .daily-direction-note, .daily-direction-connection > p:not(.daily-eyebrow) { color: #7a624f; }
-.daily-direction-connection .daily-link { color: #72513b; }
-.daily-direction-growth { background: #edf2e4; border-color: #dce4d1; color: #5c734b; }
-.daily-direction-growth h2 { color: #475f37; }
-.daily-direction-growth .daily-eyebrow, .daily-direction-growth .daily-direction-note, .daily-direction-growth > p:not(.daily-eyebrow) { color: #5d6e4f; }
-.daily-direction-growth .daily-link { color: #3e5f2d; }
-.daily-direction-joy { background: #f8f1de; border-color: #e9dfbf; color: #8a773c; }
-.daily-direction-joy h2 { color: #6f5c2d; }
-.daily-direction-joy .daily-eyebrow, .daily-direction-joy .daily-direction-note, .daily-direction-joy > p:not(.daily-eyebrow) { color: #756438; }
-.daily-direction-joy .daily-link { color: #705921; }
-.daily-arrival-summary { display: flex; align-items: center; gap: 17px; padding: 22px 18px; border-radius: 12px; background: var(--daily-tone); color: var(--daily-tone-ink); border: 1px solid color-mix(in srgb, var(--daily-tone-border), transparent 45%); }
-.daily-summary-icon { flex-shrink: 0; width: 52px; height: 52px; display: grid; place-items: center; background: #ffffff65; border-radius: 50%; }
-.daily-arrival-summary > div { min-width: 0; }
-.daily-arrival-summary > div > span { color: #5e6956; font-size: 11px; }
-.daily-arrival-summary h3 { color: #3e4c36; font-size: 25px; font-weight: 400; margin-top: 2px; }
-.daily-arrival-summary p { color: #5c6654; font-size: 11px; line-height: 1.7; margin-top: 7px; }
-.daily-saved-note { padding: 22px 0 12px; }
-.daily-saved-note > span { display: block; font-size: 10px; letter-spacing: .4px; color: #697260; margin-bottom: 9px; }
-.daily-saved-note > p { white-space: pre-wrap; overflow-wrap: anywhere; color: #46543d; font-family: var(--serif); font-size: 17px; font-weight: 400; line-height: 1.9; }
-.daily-no-note { color: #64705c; font-size: 13px; line-height: 1.8; padding: 23px 0 6px; }
-.daily-summary-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 20px; margin-top: 9px; border-top: 1px solid #e6eadf; }
-.daily-icon-action { display: grid; place-items: center; width: 44px; height: 44px; min-width: 44px; border-radius: 8px; color: #69755f; }
-.daily-icon-action:hover:not(:disabled) { color: #854e40; background: #f6ece5; }
-.daily-history { margin-top: 23px; border: 1px solid var(--daily-border); border-radius: 15px; background: #fdfcf8; }
-.daily-history > summary { display: flex; align-items: center; gap: 14px; padding: 23px 25px; list-style: none; cursor: pointer; }
-.daily-history > summary::-webkit-details-marker { display: none; }
-.daily-history-mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #efece2; color: #7d7658; flex-shrink: 0; }
-.daily-history > summary > span:nth-child(2) { min-width: 0; flex: 1; }
-.daily-history > summary strong { display: block; font-family: var(--serif); color: #48513e; font-size: 22px; font-weight: 400; line-height: 1.4; letter-spacing: -.4px; }
-.daily-history > summary > span > span { display: block; font-size: 11px; color: #6b715f; margin-top: 5px; }
-.daily-history > summary > svg { flex-shrink: 0; color: #7a846b; transition: transform .2s ease; }
-.daily-history[open] > summary > svg { transform: rotate(180deg); }
-.daily-history-body { padding: 0 25px 24px; border-top: 1px solid #e8e9df; }
-.daily-history-intro { display: flex; align-items: flex-start; gap: 8px; color: #68725e; font-size: 11px; line-height: 1.7; padding: 18px 0; }
-.daily-history-intro > svg { flex-shrink: 0; margin-top: 3px; }
-.daily-history-list { display: flex; flex-direction: column; gap: 12px; }
-.daily-history-entry { padding: 18px 19px; border: 1px solid #e5e7dc; border-radius: 10px; background: #fffefa; min-width: 0; }
-.daily-history-entry-heading { display: flex; align-items: center; gap: 12px; }
-.daily-history-entry-heading > div { flex: 1; min-width: 0; }
-.daily-history-entry-heading h3 { font-family: var(--sans); font-size: 13px; font-weight: 550; color: #425139; letter-spacing: 0; }
-.daily-history-entry-heading p { color: #66735c; font-size: 11px; margin-top: 3px; line-height: 1.7; }
-.daily-history-mood { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; flex-shrink: 0; background: var(--daily-tone); color: var(--daily-tone-ink); }
-.daily-history-note { color: #515e46; font-size: 13px; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; padding-top: 14px; }
-.daily-history-pagination { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-top: 22px; }
-.daily-history-pagination > span { color: #6a735e; font-size: 11px; flex-shrink: 0; }
-.daily-history-pagination .btn { font-size: 11px; }
-.daily-history-footnote { color: #68715e; font-size: 10px; line-height: 1.8; border-top: 1px solid #e7e9dd; padding-top: 15px; margin-top: 21px; }
-.daily-history-empty { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 22px 15px; color: #818769; }
-.daily-history-empty h3 { color: #5e674d; font-size: 23px; font-weight: 400; margin-top: 14px; }
-.daily-history-empty p { color: #68715c; font-size: 12px; line-height: 1.8; max-width: 400px; margin-top: 9px; }
-.daily-history-status { padding: 25px 0; color: #69735d; font-size: 13px; }
-.daily-connection { border: 1px solid #dac8ad; border-radius: 11px; padding: 18px 20px; background: #fbf4e9; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; color: #725b38; margin-bottom: 22px; }
-.daily-connection > div:first-child { flex: 1; min-width: min(230px, 100%); }
-.daily-connection strong { font-size: 14px; font-weight: 550; }
-.daily-connection p { font-size: 12px; line-height: 1.8; margin-top: 6px; }
-.daily-connection .daily-small { font-size: 11px; }
-.daily-loading, .daily-unavailable { min-height: 145px; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; gap: 14px; color: #68765e; padding: 20px 5px; font-size: 13px; line-height: 1.8; }
-.daily-loading > svg, .daily-unavailable > svg { color: #8d9d7c; }
-.daily-goal .daily-loading, .daily-goal .daily-unavailable { min-height: 115px; }
-.daily-confirm { border: 1px solid #dfc7bc; background: #fcf2ec; border-radius: 10px; padding: 16px; margin-top: 15px; color: #754f40; }
-.daily-confirm > strong { font-size: 13px; font-weight: 550; }
-.daily-confirm > p { font-size: 12px; line-height: 1.8; margin-top: 6px; }
-.daily-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
-.daily-confirm .daily-actions { margin-top: 13px; }
-.daily-error { color: #8b4337; font-size: 12px; line-height: 1.8; margin-top: 15px; padding: 10px 12px; background: #fcf1eb; border-left: 3px solid #b97f6f; border-radius: 4px; }
-.daily-day-change { background: #f9f2e2; color: #6d5d38; border: 1px solid #e4d6b4; border-radius: 10px; padding: 16px; margin-bottom: 20px; }
-.daily-day-change > strong { font-size: 13px; font-weight: 550; }
-.daily-day-change > p { font-size: 12px; line-height: 1.8; margin-top: 7px; }
-.daily-day-change > .daily-actions { margin-top: 12px; }
+.daily-haven button, .daily-haven a, .daily-haven summary { -webkit-tap-highlight-color: transparent; }
+.daily-haven button:not(:disabled):focus-visible, .daily-haven a:focus-visible, .daily-haven summary:focus-visible { outline: 3px solid var(--daily-focus); outline-offset: 4px; }
+.daily-haven button:disabled { cursor: not-allowed; }
+.daily-haven h2[tabindex="-1"] { scroll-margin-top: 24px; }
+.daily-haven #daily-checkin-title { scroll-margin-top: 105px; }
+.daily-haven h2[tabindex="-1"]:focus { outline: none; }
+.daily-haven .btn, .daily-haven .daily-link { min-height: 48px; font-size: 14px; }
+.daily-haven .btn { padding: 12px 19px; border-radius: 100px; font-weight: 550; min-width: 0; }
+.daily-haven .btn.btn-primary { background: var(--daily-plum); border-color: var(--daily-plum); color: #fff9f3; box-shadow: 0 5px 12px #472b4314; }
+.daily-haven .btn.btn-primary:hover:not(:disabled) { background: #633751; border-color: #633751; box-shadow: 0 7px 17px #472b4324; transform: translateY(-2px); }
+.daily-haven .btn.btn-secondary { background: #fffbf6; border-color: #c5aebc; color: var(--daily-plum); }
+.daily-haven .btn.btn-secondary:hover:not(:disabled) { background: #f4e6e5; border-color: #a67d95; }
+.daily-haven .btn.btn-danger { background: #984b3e; border-color: #984b3e; color: #fffaf3; }
+.daily-haven .daily-eyebrow { color: #725065; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 1.15px; line-height: 1.65; }
 
-@media (min-width: 1450px) {
-  .daily-card { padding: 30px; }
-  .daily-card-heading h2 { font-size: 29px; }
-  .daily-goal .daily-card-heading h2 { font-size: 27px; }
-  .daily-mood { min-height: 112px; }
-  .daily-mood > span, .daily-need { font-size: 12px; }
+/* An illustrated opening with paper shapes and botanical line work. */
+.daily-intro { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); align-items: center; gap: 16px; min-height: 430px; padding: 38px 36px 32px; margin: 16px 0 22px; background: #f5e6df; border-radius: 30px 74px 30px 30px; box-shadow: 0 12px 38px #472b4308; }
+.daily-intro::before { content: ''; position: absolute; z-index: -2; inset: 0 36% 0 0; background: #fbf2e9; border-radius: 0 100% 100% 0 / 0 85% 85% 0; }
+.daily-intro::after { content: ''; width: 245px; height: 245px; position: absolute; right: -110px; top: -150px; border: 1px solid #bc7e6b69; border-radius: 50%; z-index: -1; box-shadow: 0 0 0 23px #b9655608, 0 0 0 47px #b9655607; }
+.daily-intro-copy { position: relative; min-width: 0; z-index: 3; animation: daily-arrive .5s ease-out both; }
+.daily-haven .daily-hero-kicker { display: flex; align-items: center; gap: 8px; width: fit-content; max-width: 100%; color: #854c43; font-size: 12px; letter-spacing: 1.2px; }
+.daily-hero-kicker > svg { flex-shrink: 0; }
+.daily-hello { font-size: 14px; line-height: 1.7; color: #6d4c5d; margin: 18px 0 10px; }
+.daily-intro h1 { font-family: var(--serif); color: var(--daily-plum); font-size: clamp(45px, 4.6vw, 68px); font-weight: 400; line-height: 1.08; letter-spacing: -2.2px; }
+.daily-intro h1 em { color: #ad5e50; font-weight: 400; position: relative; }
+.daily-intro-description { color: #6c4f5e; font-size: 15px; line-height: 1.85; margin-top: 19px; max-width: 430px; }
+.daily-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 18px; margin-top: 25px; }
+.daily-hero-actions .btn { min-height: 49px; padding: 12px 19px; }
+.daily-hero-link { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 3px 0; color: #704558; font-size: 13px; font-weight: 550; }
+.daily-hero-link > span { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #c9999e; border-radius: 50%; color: #9c564b; }
+.daily-hero-link:hover:not(:disabled) { color: var(--daily-plum); }
+.daily-date { display: flex; align-items: center; gap: 7px 9px; flex-wrap: wrap; color: #795864; font-size: 12px; margin-top: 23px; }
+.daily-date > svg { color: #a46656; flex-shrink: 0; }
+.daily-date > span { border-left: 1px solid #d4bcb9; padding-left: 10px; color: #715666; font-size: 12px; }
+.daily-intro-art { min-width: 0; position: relative; height: 100%; min-height: 370px; align-self: stretch; display: grid; place-items: center; z-index: 1; animation: daily-arrive .65s .08s ease-out both; }
+.daily-art-disc { position: absolute; top: 2%; right: -1%; width: 86%; aspect-ratio: 1; border-radius: 50%; background: #e2b5a5; }
+.daily-art-orbit { position: absolute; width: 86%; height: 86%; border: 1px solid #9e5d5a6b; border-radius: 49% 51% 48% 52%; transform: rotate(17deg); right: -3%; top: 4%; }
+.daily-art-frame { position: relative; width: 96%; height: 320px; border: 9px solid #fff9ef; background: #e9e7d5; border-radius: 48% 48% 24px 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 13px 25px #603c3e1c; transform: rotate(-4deg); overflow: hidden; margin: 9px 0 0 -8px; }
+.daily-art-frame::before { content: ''; position: absolute; left: 11%; right: 11%; height: 70%; bottom: -24%; border-radius: 50%; background: #d5dfc4; }
+.daily-art-frame img { position: relative; width: 115%; max-width: 115%; height: 280px; object-fit: contain; mix-blend-mode: multiply; transform: rotate(4deg) translateY(8px); }
+.daily-art-caption { position: absolute; bottom: 9px; left: 0; right: 0; text-align: center; font-family: var(--serif); font-size: 13px; font-style: italic; color: #6e604c; }
+.daily-hero-botanical { position: absolute; width: 134px; height: 202px; left: -18px; bottom: 9px; color: #805b54; z-index: 2; transform: rotate(-24deg); opacity: .82; pointer-events: none; }
+.daily-art-stamp { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 111px; height: 111px; top: -7px; right: -1px; border-radius: 50%; background: var(--daily-plum); color: #f6dfce; z-index: 4; border: 1px dashed #dcb3bd; outline: 6px solid var(--daily-plum); transform: rotate(12deg); box-shadow: 0 7px 13px #472b4314; }
+.daily-art-stamp > svg { color: #d4aa59; margin-bottom: 4px; }
+.daily-art-stamp > span { font-size: 12px; letter-spacing: 1.2px; font-weight: 500; text-align: center; line-height: 1.55; }
+.daily-art-note { position: absolute; bottom: 0; right: -2px; z-index: 5; border-radius: 3px 17px 3px 17px; padding: 18px 21px 17px; background: #f6e3b1; box-shadow: 0 7px 18px #8053471a; color: #775244; font-family: var(--serif); font-size: 17px; line-height: 1.55; transform: rotate(5deg); }
+.daily-art-note > svg { display: block; margin-bottom: 7px; color: #ad6752; }
+.daily-art-star { position: absolute; font-size: 31px; color: #b38347; z-index: 5; line-height: 1; }
+.daily-art-star-one { top: 5%; left: 8%; transform: rotate(8deg); }
+.daily-art-star-two { bottom: 23%; right: -3%; color: #a35d68; font-size: 36px; }
+
+/* Direct routes make the home useful even without saving a check-in. */
+.daily-pathways { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 0 23px; }
+.daily-pathway { display: flex; align-items: center; text-align: left; min-width: 0; gap: 11px; padding: 18px 14px; min-height: 99px; border-radius: 17px; background: var(--pathway-bg); color: var(--daily-plum); position: relative; isolation: isolate; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
+.daily-pathway::after { content: ''; position: absolute; right: -22px; top: -20px; height: 67px; width: 67px; border: 1px solid #ffffff80; border-radius: 50%; z-index: -1; }
+.daily-pathway-lilac { --pathway-bg: #eae0f0; --pathway-ink: #77508b; }
+.daily-pathway-rose { --pathway-bg: #f3ded6; --pathway-ink: #ab6553; }
+.daily-pathway-sage { --pathway-bg: #dfe6d3; --pathway-ink: #667a4d; }
+.daily-pathway-gold { --pathway-bg: #f4e7bf; --pathway-ink: #977537; }
+.daily-pathway-icon { width: 45px; height: 49px; flex-shrink: 0; border-radius: 40% 40% 48% 48%; display: grid; place-items: center; background: #ffffff67; color: var(--pathway-ink); }
+.daily-pathway-copy { display: flex; flex-direction: column; min-width: 0; gap: 5px; }
+.daily-pathway-copy > strong { font-family: var(--serif); font-weight: 500; font-size: 16px; line-height: 1.35; letter-spacing: -.3px; }
+.daily-pathway-copy > span { font-size: 12px; color: #705764; line-height: 1.5; }
+.daily-pathway-arrow { margin-left: auto; flex-shrink: 0; color: #775769; transition: transform .2s ease; }
+.daily-pathway:hover:not(:disabled) { transform: translateY(-4px); box-shadow: 0 8px 19px #472b4310; }
+.daily-pathway:hover:not(:disabled) .daily-pathway-arrow { transform: translateX(3px); }
+.daily-privacy { display: flex; align-items: center; gap: 12px; padding: 15px 17px; margin-bottom: 26px; border-radius: 15px; background: #eee5eb; color: #624252; }
+.daily-privacy > svg { flex-shrink: 0; width: 18px; height: 18px; padding: 10px; box-sizing: content-box; background: #fff7f0; border-radius: 50%; color: #865469; }
+.daily-privacy p { min-width: 0; flex: 1; font-size: 13px; line-height: 1.75; }
+.daily-privacy strong { font-weight: 600; margin-right: 4px; color: #543347; }
+.daily-refresh { width: 44px; height: 44px; min-width: 44px; border-radius: 50%; margin-left: auto; display: grid; place-items: center; color: #714c64; }
+.daily-refresh:hover:not(:disabled) { background: #dfcbd8; }
+
+/* A check-in, a small step, and one gentle invitation. */
+.daily-grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(285px, 1fr); gap: 24px; align-items: start; }
+.daily-card { position: relative; background: #fffbf5; border: 0; border-radius: 27px; padding: 29px; min-width: 0; box-shadow: 0 7px 30px #472b4308; }
+.daily-checkin { border-top: 5px solid #c78a79; }
+.daily-card-heading { display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: wrap; }
+.daily-card-heading > div { min-width: 0; flex: 1; }
+.daily-card-heading h2 { font-family: var(--serif); font-size: 31px; font-weight: 400; color: var(--daily-plum); margin-top: 5px; letter-spacing: -.8px; line-height: 1.25; }
+.daily-card-mark { display: grid; place-items: center; width: 51px; height: 54px; border-radius: 46% 46% 40% 40%; flex-shrink: 0; }
+.daily-mark-rose { background: #f3dacf; color: #a05a4a; transform: rotate(-5deg); }
+.daily-mark-rose > svg { transform: rotate(5deg); }
+.daily-mark-sage { background: #f4f6e9; color: #607249; }
+.daily-card-intro { margin: 19px 0 27px; color: #715662; font-size: 14px; line-height: 1.8; }
+.daily-saved { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: #42613b; font-weight: 550; padding: 5px 9px; background: #e9efdc; border-radius: 99px; flex-shrink: 0; }
+.daily-fieldset { border: 0; padding: 0; margin: 0 0 27px; min-width: 0; }
+.daily-fieldset legend { color: #57394d; font-size: 14px; font-weight: 600; margin: 0 0 15px; padding: 0; }
+.daily-fieldset:disabled { opacity: .65; }
+.daily-moods { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.daily-mood-lilac { --daily-tone: #e6d7eb; --daily-tone-ink: #765487; --daily-tone-border: #b69ac3; }
+.daily-mood-blue { --daily-tone: #dce7ea; --daily-tone-ink: #51717d; --daily-tone-border: #9bb5bf; }
+.daily-mood-sage { --daily-tone: #dfe8ce; --daily-tone-ink: #627b47; --daily-tone-border: #a4b886; }
+.daily-mood-peach { --daily-tone: #f2d9c8; --daily-tone-ink: #a26448; --daily-tone-border: #d3a68b; }
+.daily-mood-gold { --daily-tone: #f3e2a9; --daily-tone-ink: #9b7a30; --daily-tone-border: #cfb66b; }
+.daily-mood { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 12px; min-height: 127px; padding: 19px 8px 14px; border: 2px solid transparent; border-radius: 32px 32px 17px 17px; position: relative; cursor: pointer; color: var(--daily-tone-ink); background: var(--daily-tone); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.daily-mood:nth-child(2) { border-radius: 48% 48% 18px 18px; }
+.daily-mood:nth-child(3) { border-radius: 27px 17px 27px 17px; }
+.daily-mood:nth-child(4) { border-radius: 19px 38px 19px 38px; }
+.daily-mood:nth-child(5) { border-radius: 45% 45% 24px 24px; }
+.daily-mood > svg:not(.daily-choice-tick) { width: 33px; height: 33px; }
+.daily-mood > span { color: #533949; font-size: 13px; font-weight: 550; line-height: 1.5; }
+.daily-mood input, .daily-need input { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.daily-mood .daily-choice-tick { position: absolute; right: 6px; top: 7px; width: 20px; height: 20px; padding: 3px; border-radius: 50%; color: #fff9f2; background: var(--daily-plum); opacity: 0; }
+.daily-mood.is-selected { border-color: var(--daily-plum); box-shadow: 0 5px 0 #472b431b; transform: translateY(-3px); }
+.daily-mood.is-selected .daily-choice-tick { opacity: 1; }
+.daily-mood:has(input:focus-visible), .daily-need:has(input:focus-visible) { outline: 3px solid var(--daily-focus); outline-offset: 4px; }
+.daily-mood:hover:has(input:not(:disabled)) { transform: translateY(-4px); box-shadow: 0 8px 16px #472b4310; }
+.daily-needs { display: flex; flex-wrap: wrap; gap: 9px; }
+.daily-need { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 10px 14px; position: relative; border: 1px solid #d9c4cd; border-radius: 99px; background: #f8f0ed; color: #68485b; font-size: 13px; font-weight: 500; cursor: pointer; }
+.daily-need > svg { flex-shrink: 0; }
+.daily-need.is-selected { border-color: var(--daily-plum); background: var(--daily-plum); color: #fff8f2; }
+.daily-need:hover:has(input:not(:disabled)) { border-color: #a67791; }
+.daily-label { display: block; color: #57394d; font-size: 14px; font-weight: 600; margin: 23px 0 10px; }
+.daily-label > span { font-weight: 400; color: #785d6b; font-size: 12px; margin-left: 6px; }
+.daily-haven input:not([type="radio"]), .daily-haven select, .daily-haven textarea { border: 1px solid #d7bdc9; border-radius: 14px; color: #513449; background: #fcf7f3; font-size: 14px; line-height: 1.7; }
+.daily-haven textarea { min-height: 126px; padding: 15px 16px; background: #f6eeef; }
+.daily-haven input::placeholder, .daily-haven textarea::placeholder { color: #826775; opacity: 1; }
+.daily-haven input:focus, .daily-haven select:focus, .daily-haven textarea:focus { outline: 2px solid #8c5f7c; outline-offset: 3px; }
+.daily-haven input:disabled, .daily-haven select:disabled, .daily-haven textarea:disabled { opacity: .65; cursor: not-allowed; }
+.daily-field-footer { display: flex; justify-content: space-between; gap: 15px; color: #785d6b; font-size: 12px; line-height: 1.7; margin-top: 9px; }
+.daily-field-footer > span:last-child { flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.daily-save-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; border-top: 1px solid #e6d7db; padding-top: 21px; margin-top: 23px; }
+.daily-draft-status { color: #795e6c; font-size: 12px; line-height: 1.7; }
+.daily-save-row .daily-draft-status { margin-left: auto; }
+.daily-link { display: inline-flex; align-items: center; justify-content: flex-start; gap: 8px; padding: 9px 0; color: #764b66; font-weight: 550; text-align: left; line-height: 1.6; }
+.daily-link:hover:not(:disabled) { color: #44223e; }
+.daily-side { display: flex; flex-direction: column; gap: 23px; min-width: 0; }
+.daily-goal { background: var(--daily-sage); padding: 28px 25px; box-shadow: none; overflow: hidden; isolation: isolate; }
+.daily-goal::before { content: ''; width: 140px; height: 140px; position: absolute; right: -82px; top: -66px; border: 1px solid #879c6159; border-radius: 50%; box-shadow: 0 0 0 17px #ffffff29; z-index: -1; }
+.daily-goal .daily-card-heading { gap: 11px; }
+.daily-goal .daily-card-heading h2 { font-size: 29px; }
+.daily-goal .daily-eyebrow { color: #536443; font-size: 12px; letter-spacing: .7px; }
+.daily-goal .daily-card-intro { color: #526044; margin-bottom: 23px; }
+.daily-goal .daily-label { color: #45593c; }
+.daily-goal input:not([type="radio"]), .daily-goal select { color: #3f5136; background: #f9fbf2; border-color: #a9bc96; }
+.daily-goal input::placeholder { color: #6c7b5c; }
+.daily-goal-hint { margin-top: 14px; color: #566748; font-size: 13px; line-height: 1.8; }
+.daily-goal-form-actions { display: flex; flex-direction: column; align-items: stretch; gap: 7px; margin-top: 21px; }
+.daily-goal-form-actions .daily-link { justify-content: center; color: #455d39; }
+.daily-goal form > .daily-draft-status { margin-top: 12px; color: #5c6d50; }
+.daily-area-label { display: inline-block; padding: 6px 11px; border-radius: 99px; background: #f7faee; color: #4e623d; font-size: 12px; font-weight: 500; }
+.daily-goal-summary > h3 { font-family: var(--serif); color: #374e2d; font-size: 28px; line-height: 1.5; letter-spacing: -.6px; font-weight: 400; margin-top: 20px; }
+.daily-goal-message { color: #526246; font-size: 14px; line-height: 1.8; margin-top: 15px; }
+.daily-complete-button { width: 100%; margin-top: 26px; }
+.daily-goal-tools { display: flex; align-items: center; justify-content: space-between; gap: 11px; margin-top: 9px; }
+.daily-goal-tools .daily-link { color: #455b38; }
+.daily-goal-complete-mark { display: flex; align-items: center; gap: 10px; color: #626b35; font-family: var(--serif); font-size: 28px; margin-top: 24px; }
+.daily-goal-complete-mark > svg { padding: 8px; width: 43px; height: 43px; border-radius: 50%; background: #f8f7dc; }
+.daily-goal-done { background: #eee5bf; }
+.daily-goal-done .daily-mark-sage { background: #f8f4db; }
+.daily-goal-done .daily-area-label { background: #fcf8e8; color: #71623b; }
+.daily-goal-done .daily-goal-summary > h3 { color: #66552e; margin-top: 14px; }
+.daily-goal-done .daily-goal-message { color: #6b603d; }
+.daily-direction { position: relative; isolation: isolate; overflow: hidden; padding: 30px 27px; border: 0; border-radius: 27px 27px 62px 27px; background: var(--daily-plum); color: #f6e7ec; min-width: 0; }
+.daily-direction > *:not(.daily-direction-botanical) { position: relative; z-index: 1; }
+.daily-direction-botanical { position: absolute; right: -29px; top: -19px; width: 140px; height: 211px; color: #d2a1bd; opacity: .18; transform: rotate(11deg); pointer-events: none; }
+.daily-direction > .daily-direction-symbol { display: block; box-sizing: content-box; padding: 12px; border-radius: 45% 45% 40% 40%; background: #72516c; color: #f0d6bd; margin-bottom: 19px; }
+.daily-direction .daily-eyebrow { font-size: 12px; letter-spacing: 1.1px; color: #e0bfd1; }
+.daily-direction h2 { color: #fff7ef; font-family: var(--serif); font-size: 33px; font-weight: 400; line-height: 1.25; margin-top: 10px; letter-spacing: -.7px; }
+.daily-direction > p:not(.daily-eyebrow) { color: #f0dce9; font-size: 14px; line-height: 1.85; margin-top: 16px; }
+.daily-direction .daily-link { color: var(--daily-plum); background: #fcf4e9; border-radius: 99px; padding: 12px 17px; margin-top: 23px; width: 100%; justify-content: space-between; }
+.daily-direction .daily-link:hover:not(:disabled) { background: #f6dcc6; color: #472b43; }
+.daily-direction .daily-link:focus-visible { outline-color: #f6d8b8; }
+.daily-direction-note { display: block; font-size: 12px; color: #e0bfd1; margin-top: 13px; text-align: center; }
+.daily-direction-connection { background: #955548; }
+.daily-direction-connection .daily-direction-symbol { background: #b77968; color: #ffecd2; }
+.daily-direction-connection h2, .daily-direction-growth h2 { color: #fffaf0; }
+.daily-direction-connection .daily-eyebrow, .daily-direction-connection .daily-direction-note, .daily-direction-connection > p:not(.daily-eyebrow) { color: #ffeadc; }
+.daily-direction-connection .daily-direction-botanical { color: #f6d2ab; opacity: .24; }
+.daily-direction-growth { background: #4f6549; }
+.daily-direction-growth .daily-direction-symbol { background: #6c805c; color: #f1e9c2; }
+.daily-direction-growth .daily-eyebrow, .daily-direction-growth .daily-direction-note, .daily-direction-growth > p:not(.daily-eyebrow) { color: #eff2df; }
+.daily-direction-growth .daily-direction-botanical { color: #cbd9b5; opacity: .23; }
+.daily-direction-joy { background: #efd59a; }
+.daily-direction-joy .daily-direction-symbol { background: #fae9c4; color: #98703a; }
+.daily-direction-joy h2 { color: #5a3c35; }
+.daily-direction-joy .daily-eyebrow, .daily-direction-joy .daily-direction-note, .daily-direction-joy > p:not(.daily-eyebrow) { color: #6e513c; }
+.daily-direction-joy .daily-link { background: var(--daily-plum); color: #fff5e9; }
+.daily-direction-joy .daily-link:hover:not(:disabled) { background: #62384f; color: #fff5e9; }
+.daily-direction-joy .daily-link:focus-visible { outline-color: var(--daily-plum); }
+.daily-direction-joy .daily-direction-botanical { color: #a77f42; opacity: .23; }
+
+/* Saved words and the journal are treated as quiet, readable pages. */
+.daily-arrival-summary { display: flex; align-items: center; gap: 18px; padding: 26px 22px; border-radius: 22px 22px 42px 22px; background: var(--daily-tone); color: var(--daily-tone-ink); }
+.daily-summary-icon { flex-shrink: 0; width: 63px; height: 67px; display: grid; place-items: center; background: #fff9f58c; border-radius: 48% 48% 38% 38%; }
+.daily-arrival-summary > div { min-width: 0; }
+.daily-arrival-summary > div > span { color: #68465e; font-size: 12px; }
+.daily-arrival-summary h3 { font-family: var(--serif); color: #4d2e45; font-size: 29px; font-weight: 400; margin-top: 4px; line-height: 1.3; }
+.daily-arrival-summary p { color: #68465c; font-size: 13px; line-height: 1.8; margin-top: 10px; }
+.daily-saved-note { padding: 26px 0 16px; }
+.daily-saved-note > span { display: block; font-size: 12px; letter-spacing: .5px; color: #8b655e; margin-bottom: 12px; font-weight: 500; }
+.daily-saved-note > p { white-space: pre-wrap; overflow-wrap: anywhere; color: #604354; font-family: var(--serif); font-size: 19px; font-weight: 400; line-height: 1.9; }
+.daily-no-note { color: #705364; font-size: 14px; line-height: 1.85; padding: 27px 0 8px; }
+.daily-summary-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 21px; margin-top: 10px; border-top: 1px solid #e5d5d8; }
+.daily-icon-action { display: grid; place-items: center; width: 44px; height: 44px; min-width: 44px; border-radius: 50%; color: #815a70; }
+.daily-icon-action:hover:not(:disabled) { color: #8e473c; background: #f0d9d0; }
+.daily-goal-tools .daily-icon-action { color: #586f49; }
+.daily-history { margin-top: 28px; border: 0; border-radius: 25px; background: #eee2e7; overflow: hidden; }
+.daily-history > summary { display: flex; align-items: center; gap: 17px; padding: 25px 27px; list-style: none; cursor: pointer; }
+.daily-history > summary::-webkit-details-marker { display: none; }
+.daily-history > summary:focus-visible { outline-offset: -5px; border-radius: 22px; }
+.daily-history-mark { display: grid; place-items: center; width: 52px; height: 57px; border-radius: 39% 39% 46% 46%; background: var(--daily-plum); color: #f6d8c5; flex-shrink: 0; }
+.daily-history > summary > span:nth-child(2) { min-width: 0; flex: 1; }
+.daily-history > summary strong { display: block; font-family: var(--serif); color: var(--daily-plum); font-size: 28px; font-weight: 400; line-height: 1.35; letter-spacing: -.5px; }
+.daily-history > summary > span > span { display: block; font-size: 13px; color: #76596d; margin-top: 7px; line-height: 1.7; }
+.daily-history > summary > svg { flex-shrink: 0; box-sizing: content-box; padding: 11px; background: #fff7f0; border-radius: 50%; color: #815570; transition: transform .2s ease; }
+.daily-history[open] > summary > svg { transform: rotate(180deg); }
+.daily-history-body { padding: 0 27px 26px; background: #fcf5ef; border-top: 1px solid #e0cbd5; }
+.daily-history-intro { display: flex; align-items: flex-start; gap: 9px; color: #765667; font-size: 13px; line-height: 1.8; padding: 21px 0; }
+.daily-history-intro > svg { flex-shrink: 0; margin-top: 5px; }
+.daily-history-list { display: flex; flex-direction: column; gap: 0; }
+.daily-history-entry { padding: 22px 0; border-bottom: 1px solid #e3cdd6; background: transparent; min-width: 0; }
+.daily-history-entry:first-child { padding-top: 8px; }
+.daily-history-entry:last-child { border-bottom: 0; }
+.daily-history-entry-heading { display: flex; align-items: center; gap: 14px; }
+.daily-history-entry-heading > div { flex: 1; min-width: 0; }
+.daily-history-entry-heading h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; color: #56374b; letter-spacing: -.3px; }
+.daily-history-entry-heading p { color: #795a6b; font-size: 13px; margin-top: 4px; line-height: 1.8; }
+.daily-history-mood { width: 48px; height: 52px; display: grid; place-items: center; border-radius: 46% 46% 35% 35%; flex-shrink: 0; background: var(--daily-tone); color: var(--daily-tone-ink); }
+.daily-history-note { color: #674c5c; font-size: 15px; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; padding-top: 17px; }
+.daily-history-pagination { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-top: 23px; }
+.daily-history-pagination > span { color: #7a5a6a; font-size: 12px; flex-shrink: 0; }
+.daily-history-pagination .btn { font-size: 13px; }
+.daily-history-footnote { color: #7b5c6c; font-size: 12px; line-height: 1.85; border-top: 1px solid #e1cdd4; padding-top: 18px; margin-top: 23px; }
+.daily-history-empty { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 29px 16px; color: #a67b72; }
+.daily-history-empty > svg { box-sizing: content-box; padding: 16px; background: #f1e1d8; border-radius: 50%; }
+.daily-history-empty h3 { color: #624453; font-size: 26px; font-weight: 400; margin-top: 19px; }
+.daily-history-empty p { color: #7b5d68; font-size: 14px; line-height: 1.85; max-width: 420px; margin-top: 11px; }
+.daily-history-status { padding: 26px 0; color: #775a69; font-size: 14px; }
+
+/* Feedback remains prominent and preserves the original interaction states. */
+.daily-connection { border: 1px solid #d0ab77; border-radius: 18px; padding: 21px 23px; background: #f8ebd1; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; color: #765434; margin-bottom: 24px; }
+.daily-connection > div:first-child { flex: 1; min-width: min(230px, 100%); }
+.daily-connection strong { font-size: 15px; font-weight: 600; }
+.daily-connection p { font-size: 14px; line-height: 1.8; margin-top: 8px; }
+.daily-connection .daily-small { font-size: 13px; }
+.daily-loading, .daily-unavailable { min-height: 155px; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; gap: 17px; color: #795c6b; padding: 24px 7px; font-size: 14px; line-height: 1.85; }
+.daily-loading > svg, .daily-unavailable > svg { color: #b28375; }
+.daily-goal .daily-loading, .daily-goal .daily-unavailable { min-height: 125px; color: #576a48; }
+.daily-confirm { border: 1px solid #cda28f; background: #fae8dd; border-radius: 16px; padding: 18px; margin-top: 18px; color: #794a3d; }
+.daily-confirm > strong { font-size: 14px; font-weight: 600; }
+.daily-confirm > p { font-size: 13px; line-height: 1.85; margin-top: 8px; }
+.daily-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.daily-confirm .daily-actions { margin-top: 16px; }
+.daily-error { color: #8b3e34; font-size: 14px; line-height: 1.8; margin-top: 18px; padding: 13px 15px; background: #fae8df; border-left: 4px solid #b96556; border-radius: 6px 13px 13px 6px; }
+.daily-day-change { background: #f5e8c7; color: #745737; border: 1px solid #d8bd85; border-radius: 17px; padding: 19px; margin-bottom: 23px; }
+.daily-day-change > strong { font-size: 15px; font-weight: 600; }
+.daily-day-change > p { font-size: 14px; line-height: 1.85; margin-top: 9px; }
+.daily-day-change > .daily-actions { margin-top: 15px; }
+
+@keyframes daily-arrive { from { opacity: 0; transform: translateY(13px); } to { opacity: 1; transform: translateY(0); } }
+@media (min-width: 1500px) {
+  .daily-intro { min-height: 465px; padding: 44px; }
+  .daily-intro-art { min-height: 390px; }
+  .daily-art-frame { height: 360px; }
+  .daily-art-frame img { height: 320px; }
+  .daily-card { padding: 33px; }
+  .daily-card-heading h2 { font-size: 33px; }
+  .daily-mood { min-height: 139px; }
+  .daily-mood > span { font-size: 14px; }
 }
-@media (max-width: 1120px) {
+@media (max-width: 1180px) {
+  .daily-intro { padding: 29px 27px; }
+  .daily-intro h1 { font-size: 51px; }
+  .daily-intro-art { min-height: 350px; }
+  .daily-art-frame { height: 285px; }
+  .daily-art-frame img { height: 255px; }
+  .daily-art-stamp { width: 96px; height: 96px; right: -2px; top: 5px; }
+  .daily-art-stamp > svg { width: 25px; height: 25px; }
+  .daily-art-stamp > span { font-size: 12px; letter-spacing: .7px; }
+  .daily-art-note { font-size: 15px; padding: 16px 18px; }
+  .daily-pathway { flex-wrap: wrap; padding: 17px 14px; gap: 10px; }
+  .daily-pathway-icon { width: 39px; height: 42px; }
+  .daily-pathway-copy { flex: 1 1 calc(100% - 51px); }
+  .daily-pathway-arrow { position: absolute; right: 11px; top: 10px; width: 15px; opacity: .65; }
+  .daily-pathway-copy > strong { font-size: 16px; }
   .daily-grid { grid-template-columns: minmax(0, 1fr); }
   .daily-side { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: start; }
-  .daily-intro { grid-template-columns: minmax(0, 1.2fr) minmax(210px, .8fr); }
-  .daily-intro h1 { font-size: 47px; }
-  .daily-intro-art img { max-height: 220px; }
-  .daily-mood { min-height: 100px; }
+  .daily-mood { min-height: 117px; }
+}
+@container daily-haven (max-width: 740px) {
+  .daily-intro { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 3px; min-height: 410px; }
+  .daily-intro h1 { font-size: 44px; letter-spacing: -1.6px; }
+  .daily-intro-description { font-size: 14px; }
+  .daily-hero-actions { gap: 10px; }
+  .daily-hero-actions .btn { padding-inline: 16px; font-size: 13px; }
+  .daily-hero-link { font-size: 13px; }
+  .daily-intro-art { min-height: 320px; }
+  .daily-art-frame { height: 251px; width: 100%; }
+  .daily-art-frame img { height: 229px; }
+  .daily-art-stamp { width: 85px; height: 85px; top: 9px; right: -8px; }
+  .daily-art-stamp > svg { width: 22px; height: 22px; }
+  .daily-art-stamp > span { font-size: 12px; letter-spacing: .3px; }
+  .daily-art-note { bottom: 9px; right: -9px; font-size: 14px; padding: 13px 16px; }
+  .daily-hero-botanical { width: 103px; height: 160px; bottom: 21px; left: -10px; }
+  .daily-art-caption { font-size: 12px; }
+  .daily-pathways { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .daily-pathway { flex-wrap: nowrap; min-height: 100px; padding: 18px; }
+  .daily-pathway-copy { flex: 1; }
+  .daily-pathway-arrow { position: static; width: 17px; }
+}
+@container daily-haven (max-width: 570px) {
+  .daily-intro { grid-template-columns: minmax(0, 1fr); padding: 29px 26px 23px; gap: 13px; border-radius: 25px 62px 25px 25px; }
+  .daily-intro::before { inset: 0 0 43%; border-radius: 0 0 60% 0; }
+  .daily-intro h1 { font-size: 55px; }
+  .daily-intro-description { font-size: 15px; }
+  .daily-intro-art { height: 290px; min-height: 0; max-width: 350px; width: 100%; justify-self: center; }
+  .daily-art-disc { width: 77%; right: 2%; top: 0; }
+  .daily-art-orbit { width: 80%; height: 93%; right: -1%; }
+  .daily-art-frame { height: 255px; width: 87%; margin-top: 0; }
+  .daily-art-frame img { height: 233px; }
+  .daily-art-stamp { width: 91px; height: 91px; top: 3px; right: 3px; }
+  .daily-art-note { right: -3px; bottom: 0; padding: 12px 17px; font-size: 15px; }
+  .daily-hero-botanical { left: 0; bottom: 5px; width: 105px; height: 168px; }
+  .daily-art-star-one { left: 7%; top: 4%; }
+  .daily-art-star-two { right: -1%; bottom: 42%; }
+  .daily-pathway { padding: 17px 14px; gap: 11px; flex-direction: column; align-items: flex-start; min-height: 149px; }
+  .daily-pathway-icon { width: 44px; height: 46px; }
+  .daily-pathway-copy > strong { font-size: 17px; }
+  .daily-pathway-copy > span { font-size: 12px; }
+  .daily-pathway-arrow { position: absolute; top: 19px; right: 15px; }
+  .daily-card, .daily-goal { padding: 25px 22px; border-radius: 23px; }
+  .daily-card-heading h2 { font-size: 29px; }
+  .daily-card-heading { gap: 12px; }
+  .daily-card-heading .daily-saved { width: fit-content; max-width: 100%; margin-left: 0; }
+  .daily-card-mark { width: 45px; height: 48px; }
+  .daily-moods { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .daily-mood { min-height: 119px; }
+  .daily-side { display: flex; }
+  .daily-goal .daily-card-heading h2 { font-size: 30px; }
+  .daily-direction { padding: 28px; }
+  .daily-direction h2 { font-size: 35px; }
+  .daily-needs { gap: 9px; }
+  .daily-need { font-size: 13px; padding: 10px 13px; }
+  .daily-save-row .daily-draft-status { width: 100%; margin-left: 0; }
+  .daily-arrival-summary { padding: 23px 18px; gap: 13px; }
+  .daily-summary-icon { width: 53px; height: 58px; }
+  .daily-arrival-summary h3 { font-size: 27px; }
+  .daily-summary-actions { flex-wrap: wrap; }
+  .daily-history > summary { padding: 23px 20px; gap: 13px; align-items: flex-start; }
+  .daily-history > summary > svg { width: 18px; height: 18px; padding: 9px; margin-top: 7px; }
+  .daily-history > summary strong { font-size: 25px; }
+  .daily-history-mark { width: 43px; height: 48px; margin-top: 3px; }
+  .daily-history-body { padding: 0 21px 25px; }
+  .daily-history-pagination { flex-wrap: wrap; gap: 11px; }
+  .daily-history-pagination > span { order: -1; width: 100%; text-align: center; }
+  .daily-history-pagination .btn { flex: 1; padding: 11px 12px; font-size: 12px; }
 }
 @media (max-width: 760px) {
-  .daily-intro { padding-top: 25px; }
-  .daily-intro h1 { font-size: 46px; }
-  .daily-intro-description { font-size: 13px; }
-  .daily-intro-art img { width: 106%; max-width: 106%; }
-  .daily-intro-art > span { font-size: 10px; bottom: 28px; }
-  .daily-haven .btn, .daily-haven .daily-link { font-size: 13px; }
-  .daily-card-intro, .daily-goal-message, .daily-direction > p:not(.daily-eyebrow), .daily-goal-hint { font-size: 13px; }
-  .daily-label, .daily-fieldset legend { font-size: 14px; }
   .daily-haven input:not([type="radio"]), .daily-haven select, .daily-haven textarea { font-size: 16px; }
-  .daily-mood > span { font-size: 12px; }
-  .daily-need { font-size: 12px; }
-  .daily-privacy p { font-size: 12px; }
-  .daily-field-footer, .daily-draft-status { font-size: 11px; }
-  .daily-history-note { font-size: 14px; }
-  .daily-history > summary > span > span, .daily-history-entry-heading p, .daily-history-intro { font-size: 12px; }
-}
-@media (max-width: 580px) {
-  .daily-intro { grid-template-columns: minmax(0, 1fr); padding-top: 27px; gap: 0; }
-  .daily-intro h1 { font-size: 48px; }
-  .daily-intro-art { display: none; }
-  .daily-hello { font-size: 13px; }
-  .daily-intro-description { font-size: 14px; }
-  .daily-date { margin-top: 19px; font-size: 11px; }
-  .daily-privacy { padding: 13px 12px; align-items: flex-start; gap: 8px; }
-  .daily-privacy > svg { margin-top: 3px; }
+  .daily-haven .daily-eyebrow { font-size: 12px; }
+  .daily-intro { margin-top: 14px; }
+  .daily-grid { gap: 19px; }
+  .daily-privacy { padding: 14px 13px; gap: 10px; }
+  .daily-privacy p { font-size: 13px; }
   .daily-privacy strong { display: block; }
-  .daily-refresh { margin: -4px -5px -4px auto; }
-  .daily-grid { gap: 17px; }
-  .daily-card, .daily-goal { padding: 23px 19px; border-radius: 14px; }
-  .daily-card-heading { gap: 10px; flex-wrap: wrap; }
-  .daily-card-heading h2 { font-size: 26px; }
-  .daily-card-heading .daily-saved { width: 100%; padding-left: 55px; }
-  .daily-card-mark { width: 43px; height: 43px; }
-  .daily-card .daily-eyebrow { font-size: 8px; letter-spacing: 1px; }
-  .daily-moods { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
-  .daily-mood { min-height: 99px; padding-inline: 8px; }
-  .daily-needs { gap: 8px; }
-  .daily-need { padding: 10px; font-size: 12px; }
-  .daily-side { display: flex; }
-  .daily-goal .daily-card-heading h2 { font-size: 26px; }
-  .daily-direction { padding: 24px; }
-  .daily-direction h2 { font-size: 28px; }
-  .daily-direction .daily-eyebrow { font-size: 9px; }
-  .daily-save-row { gap: 9px; }
-  .daily-save-row .daily-draft-status { margin-left: 0; width: 100%; }
-  .daily-arrival-summary { padding: 20px 15px; gap: 12px; }
-  .daily-summary-icon { width: 44px; height: 44px; }
-  .daily-arrival-summary h3 { font-size: 23px; }
-  .daily-arrival-summary p { font-size: 12px; }
-  .daily-summary-actions { flex-wrap: wrap; }
-  .daily-history { margin-top: 18px; }
-  .daily-history > summary { padding: 20px 17px; gap: 11px; align-items: flex-start; }
-  .daily-history > summary > svg { margin-top: 10px; width: 18px; }
-  .daily-history > summary strong { font-size: 22px; }
-  .daily-history-mark { width: 36px; height: 36px; margin-top: 3px; }
-  .daily-history-body { padding: 0 16px 22px; }
-  .daily-history-entry { padding: 15px 13px; }
-  .daily-history-entry-heading { gap: 9px; align-items: flex-start; }
-  .daily-history-entry-heading .daily-icon-action { margin: -4px -6px 0 0; }
-  .daily-history-mood { width: 33px; height: 33px; margin-top: 3px; }
-  .daily-history-pagination { flex-wrap: wrap; gap: 10px; }
-  .daily-history-pagination > span { order: -1; width: 100%; text-align: center; }
-  .daily-history-pagination .btn { flex: 1; padding: 10px 9px; font-size: 11px; }
-  .daily-history-footnote { font-size: 11px; }
-  .daily-connection { padding: 17px; }
-  .daily-connection > div:first-child { min-width: 0; flex-basis: 100%; }
-  .daily-day-change .btn { width: 100%; }
 }
-@media (max-width: 370px) {
+@container daily-haven (max-width: 350px) {
+  .daily-intro { padding: 25px 20px 21px; border-top-right-radius: 49px; gap: 15px; }
   .daily-intro h1 { font-size: 43px; letter-spacing: -1.5px; }
-  .daily-date > span { flex-basis: 100%; border: 0; padding-left: 24px; }
-  .daily-card, .daily-goal { padding: 20px 15px; }
-  .daily-card-heading h2 { font-size: 23px; }
-  .daily-card-mark { width: 35px; height: 35px; }
-  .daily-card-heading .daily-saved { padding-left: 45px; }
+  .daily-intro-description { font-size: 14px; }
+  .daily-hero-kicker { flex-wrap: wrap; }
+  .daily-hello { font-size: 14px; }
+  .daily-hero-actions { gap: 8px; }
+  .daily-hero-actions .btn { font-size: 14px; }
+  .daily-hero-link { font-size: 13px; }
+  .daily-date > span { flex-basis: 100%; border: 0; padding-left: 25px; }
+  .daily-intro-art { height: 253px; }
+  .daily-art-frame { height: 220px; width: 95%; border-width: 7px; }
+  .daily-art-frame img { height: 196px; }
+  .daily-art-stamp { width: 77px; height: 77px; top: 2px; right: -6px; outline-width: 4px; }
+  .daily-art-stamp > svg { width: 20px; height: 20px; margin-bottom: 1px; }
+  .daily-art-stamp > span { font-size: 12px; letter-spacing: 0; line-height: 1.4; }
+  .daily-art-note { font-size: 13px; padding: 12px 13px; right: -3px; }
+  .daily-art-note > svg { width: 15px; height: 15px; margin-bottom: 4px; }
+  .daily-art-caption { bottom: 7px; font-size: 12px; }
+  .daily-hero-botanical { width: 86px; height: 140px; left: -14px; bottom: 7px; }
+  .daily-art-star-one { left: 0; }
+  .daily-art-star-two { right: -4px; font-size: 27px; }
+  .daily-pathways { gap: 10px; }
+  .daily-pathway { padding: 16px 13px; min-height: 152px; border-radius: 16px; }
+  .daily-pathway-copy > strong { font-size: 16px; }
+  .daily-privacy { gap: 7px; align-items: flex-start; padding: 14px 10px; }
+  .daily-privacy > svg { padding: 8px; width: 16px; height: 16px; margin-top: 4px; }
+  .daily-privacy p { font-size: 12px; }
+  .daily-refresh { margin-right: -3px; }
+  .daily-card, .daily-goal { padding: 22px 17px; border-radius: 20px; }
+  .daily-card-heading { gap: 10px; }
+  .daily-card-heading h2 { font-size: 27px; }
+  .daily-card-mark { width: 38px; height: 42px; }
+  .daily-card-heading .daily-eyebrow { letter-spacing: .5px; }
   .daily-moods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .daily-mood:last-child { grid-column: 1 / -1; min-height: 70px; flex-direction: row; gap: 12px; }
-  .daily-need { width: 100%; }
-  .daily-field-footer { flex-wrap: wrap; gap: 4px; }
+  .daily-mood:last-child { grid-column: 1 / -1; min-height: 82px; flex-direction: row; gap: 14px; border-radius: 35px 18px 35px 18px; }
+  .daily-need { width: 100%; font-size: 14px; }
+  .daily-field-footer { flex-wrap: wrap; gap: 6px; }
   .daily-field-footer > span:last-child { margin-left: auto; }
   .daily-save-row > .btn { width: 100%; }
-  .daily-arrival-summary { flex-direction: column; align-items: flex-start; }
-  .daily-history > summary { gap: 9px; padding-inline: 13px; }
-  .daily-history > summary strong { font-size: 21px; }
+  .daily-arrival-summary { flex-direction: column; align-items: flex-start; border-bottom-right-radius: 35px; }
+  .daily-direction { padding: 25px 22px; border-bottom-right-radius: 47px; }
+  .daily-direction h2 { font-size: 32px; }
+  .daily-history > summary { gap: 11px; padding: 22px 16px; }
+  .daily-history > summary strong { font-size: 25px; }
   .daily-history-mark { display: none; }
-  .daily-history-body { padding-inline: 13px; }
-  .daily-history-entry { padding-inline: 10px; }
-  .daily-history-mood { display: none; }
-  .daily-history-pagination .btn { flex-basis: 100%; }
-  .daily-confirm { padding: 13px; }
+  .daily-history-body { padding-inline: 17px; }
+  .daily-history-entry-heading { gap: 11px; align-items: flex-start; }
+  .daily-history-entry-heading h3 { font-size: 21px; }
+  .daily-history-mood { width: 36px; height: 40px; margin-top: 3px; }
+  .daily-history-entry-heading .daily-icon-action { width: 44px; min-width: 44px; margin-right: -5px; }
+  .daily-history-pagination .btn { flex-basis: 100%; font-size: 13px; }
+  .daily-confirm { padding: 16px; }
   .daily-confirm .btn { width: 100%; }
+  .daily-connection { padding: 19px 17px; }
+  .daily-connection > div:first-child { min-width: 0; flex-basis: 100%; }
+  .daily-day-change { padding: 17px; }
+  .daily-day-change .btn { width: 100%; }
 }
 .gentle-mode .daily-haven *, .gentle-mode .daily-haven *::before, .gentle-mode .daily-haven *::after { animation: none !important; transition: none !important; }
-.gentle-mode .daily-haven .btn:hover, .gentle-mode .daily-haven .daily-mood:hover { transform: none; }
+.gentle-mode .daily-haven .btn:hover, .gentle-mode .daily-haven .daily-mood:hover, .gentle-mode .daily-haven .daily-mood.is-selected, .gentle-mode .daily-haven .daily-pathway:hover, .gentle-mode .daily-haven .daily-pathway:hover .daily-pathway-arrow { transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .daily-haven *, .daily-haven *::before, .daily-haven *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-  .daily-haven .btn:hover, .daily-haven .daily-mood:hover { transform: none; }
+  .daily-haven .btn:hover, .daily-haven .daily-mood:hover, .daily-haven .daily-mood.is-selected, .daily-haven .daily-pathway:hover, .daily-haven .daily-pathway:hover .daily-pathway-arrow { transform: none; }
 }

@@ -4,6 +4,7 @@ import './explore.css';
 import './readability.css';
 import './community.css';
 import './daily-haven.css';
+import './atelier.css';
 
 export const metadata: Metadata = {
   title: 'Her Haven — Come as you are',

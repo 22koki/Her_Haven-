@@ -1,6 +1,19 @@
 # Release verification
 
-Community release verified on 3 November 2026 using synthetic local data; the Windows helper fix and daily-haven update were checked on 4 November 2026. These source updates have not been deployed to the earlier hosted private alpha.
+Community release verified on 3 November 2026 using synthetic local data; the Windows helper fix, daily-haven update, and visual redesign were checked on 4 November 2026. These source updates have not been deployed to the earlier hosted private alpha.
+
+## Visual redesign — 4 November 2026
+
+This pass changes presentation and destination shortcuts. Existing private-moments API/state handlers, community permissions, migrations, and dependencies are unchanged.
+
+- Reviewed the visitor welcome, member home, check-in form, community feed, writing-prompt editor, joy corner, and quiet-room timer in the managed browser preview using the existing synthetic local account.
+- Verified mood/need selection and the corresponding suggestion state, cancellation back to saved values, navigation from the new destination cards, quiet-timer start/pause, and the joy prompt's **Another little idea** action.
+- Verified **A moment for me** scrolls and focuses the check-in heading with 105px clearance for the sticky header.
+- Checked member-home summaries and forms in 320px and 390px iframe viewports. Document widths matched the available viewport widths. Also checked the resource editor at 320px and the quiet room at both widths; these are responsive layout checks, not physical-device tests.
+- Verified mobile navigation opens and reaches a selected page. The quick exit remains reachable in the pinned sidebar footer, while short screens can scroll the navigation.
+- Toggled gentle mode and confirmed the member hero's computed animation was `none`, then restored the previous preference. Reviewed reduced-motion rules, keyboard focus contrast, active navigation count contrast, and touch-target sizing.
+- Browser screenshots are local verification evidence and are not included in the source commit.
+- Final `tsc --noEmit` and production build passed. `git diff --check` passed. No backend tests were added or rerun for this presentation-only pass; the 58-test daily-haven result below remains prior-release evidence.
 
 ## Daily haven — 4 November 2026
 
