@@ -33,8 +33,9 @@ export function parseArguments(args) {
 function execute(extra) {
   // Keep the executable, DB binding, local flag, config and persistence path
   // fixed. User input is SQL-escaped data and never a shell command or path.
+  // Absolute ESM preloads need file URLs; Windows drive paths look like schemes.
   const result = spawnSync(process.execPath, [
-    '--import', path.join(projectRoot, 'scripts/sites-env.mjs'), wrangler,
+    '--import', new URL('./sites-env.mjs', import.meta.url).href, wrangler,
     'd1', 'execute', 'DB', '--local', '--config', config,
     '--persist-to', state, '--json', ...extra,
   ], { cwd: projectRoot, encoding: 'utf8', shell: false, maxBuffer: 4 * 1024 * 1024 });

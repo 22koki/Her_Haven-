@@ -1,6 +1,16 @@
 # Release verification
 
-Verified on 3 November 2026 using synthetic local data. The community source update has not been deployed to the earlier hosted private alpha.
+Community release verified on 3 November 2026 using synthetic local data; the Windows helper fix was checked on 4 November 2026. The community source update has not been deployed to the earlier hosted private alpha.
+
+## Windows local-command fix — 4 November 2026
+
+The local helper previously passed a native absolute path to Node's `--import`. A Windows drive letter was therefore treated as a URL scheme, producing `ERR_UNSUPPORTED_ESM_URL_SCHEME` before Wrangler could execute. The preload is now resolved as a file URL relative to `import.meta.url`. Filesystem arguments, the local-only database flag, and `shell: false` are unchanged.
+
+- Added a subprocess regression that runs both `setup` and `moderator` from a temporary project path containing spaces, `#`, and `%`. It loads the actual environment module and uses a fake Wrangler CLI to inspect the spawned arguments without accessing a database or network.
+- Confirmed this regression fails before the fix and passes afterward. It also checks that every database invocation retains `--local` and receives a `file:` preload URL pointing to the correct file.
+- `npm test`: **39 passed, 0 failed, 0 skipped** after the fix.
+- The real `community:setup` and `community:moderator -- --user local_seedy` commands completed against the existing synthetic local database on Linux. The existing moderator grant was preserved.
+- A native Windows runtime was not available here. The regression is platform-independent and will exercise drive-letter paths when run on Windows. The earlier production build remains applicable because this patch changes only the development helper, its tests, and this document.
 
 ## Community release
 
