@@ -56,7 +56,8 @@ process.stdout.write(JSON.stringify([{ success: true, results }]));
     assert.match(result.stdout, args[0] === 'setup' ? /Community tables are ready locally/ : /Enabled local moderator access for CLI test member/);
   }
   const calls = readFileSync(path.join(root, 'wrangler-calls.jsonl'), 'utf8').trim().split('\n').map(line => JSON.parse(line));
-  assert.equal(calls.length, 5);
+  assert.equal(calls.length, 6);
+  assert.ok(calls.some(call => call.args.includes(path.join(root, 'drizzle/0002_private_moments.sql'))));
   for (const call of calls) {
     assert.deepEqual(call.args.slice(0, 4), ['d1', 'execute', 'DB', '--local']);
     assert.ok(!call.args.includes('--remote'));

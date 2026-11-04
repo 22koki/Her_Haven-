@@ -1,6 +1,25 @@
 # Release verification
 
-Community release verified on 3 November 2026 using synthetic local data; the Windows helper fix was checked on 4 November 2026. The community source update has not been deployed to the earlier hosted private alpha.
+Community release verified on 3 November 2026 using synthetic local data; the Windows helper fix and daily-haven update were checked on 4 November 2026. These source updates have not been deployed to the earlier hosted private alpha.
+
+## Daily haven — 4 November 2026
+
+- `npm test`: **58 passed, 0 failed, 0 skipped**. The 19 new moments tests comprise 7 validation checks and 12 service integration scenarios using real SQLite.
+- `tsc --noEmit`: passed. The production build passed with `/`, `/api/haven`, `/api/community`, and the new `/api/moments` route.
+- Targeted ESLint for the new component returned no errors and one `no-img-element` advisory for the existing decorative WebP. This is not a claim that the entire repository is lint-clean.
+- The new scenarios cover account isolation (including moderator accounts), exclusion from shared Community snapshots, independent private access during community suspension, daily upserts, local-calendar boundaries, history pagination, owner deletion, current-goal replacement/completion/undo, stale IDs, private reset cascades, concurrent capacity limits of 365 entries, and six profile-change/write races.
+- `community:setup` successfully applied the additive private-moments migration to the existing synthetic local database. Its subprocess regression still verifies the file-URL preload fix and now checks that the additional migration is invoked.
+- Generated Drizzle metadata was checked against the shipped SQL for columns, equivalent default values, primary keys, foreign keys, and indexes. No historical private or shared content is copied into the new tables.
+- The earlier Windows helper fix and Care desk hide/restore flow were also confirmed by the owner on their Windows setup. That user confirmation is separate from these Linux automated checks.
+
+### Daily browser checks
+
+The managed preview used the existing local sign-in simulator and synthetic moderator account; no hosted data was used.
+
+1. Saved a mood, selected need, and optional private note. Edited and saved that same day, then confirmed the history contained one updated entry.
+2. Saved a personal step, completed it, and reloaded the page. Both the updated note and completed step persisted. Reopening the step with **Keep working on it** restored the active state.
+3. Followed the selected need's **Visit the quiet room** link and verified the quiet-room screen.
+4. Checked saved summaries and editable check-in forms in 320px and 390px same-origin iframe viewports. Corrected the saved-status spacing that caused a small horizontal overflow; document width then matched the available viewport width at both sizes. Visually checked the mood choices, need choices, note, and save controls. These are responsive layout checks, not physical-device tests.
 
 ## Windows local-command fix — 4 November 2026
 

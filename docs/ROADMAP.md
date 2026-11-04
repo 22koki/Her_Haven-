@@ -6,6 +6,10 @@ The original private-practice space remains isolated. A separate Community area 
 
 Authentication continues to use the existing trusted sign-in. Signing in does not imply approved membership. Moderator roles are assigned through trusted operator access, never through registration or browser-submitted role fields.
 
+## Daily member experience
+
+My haven now offers an account-private daily check-in with an optional note, a paginated reflection history, and one small personal step that can be completed or revised. The chosen need opens the quiet room, community, growth resources, or joy corner. No clinical interpretation, streaks, reminders, or automatic sharing are added. These records stay outside moderation and are removed with the private profile reset.
+
 ## Before inviting a live group
 
 1. Assign the first production moderator to the intended, verified account through trusted database administration. Run the additive migration and verify membership/application decisions on the target host.

@@ -11,6 +11,7 @@ const config = path.join(projectRoot, 'dist/server/wrangler.json');
 const state = path.join(projectRoot, '.wrangler/state');
 const initialMigration = path.join(projectRoot, 'drizzle/0000_overjoyed_kang.sql');
 const communityMigration = path.join(projectRoot, 'drizzle/0001_community.sql');
+const momentsMigration = path.join(projectRoot, 'drizzle/0002_private_moments.sql');
 const privateTables = ['haven_profiles', 'haven_posts', 'haven_replies', 'haven_reports'];
 
 export function sqlText(value) {
@@ -69,7 +70,9 @@ function setup() {
     throw new Error('The local private schema is incomplete. Restore or finish its initial migration before upgrading; no existing tables have been replaced.');
   }
   execute(['--file', communityMigration]);
+  execute(['--file', momentsMigration]);
   process.stdout.write('Community tables are ready locally. Existing private posts and profiles are preserved.\n');
+  process.stdout.write('Private check-ins and your personal step are ready too.\n');
 }
 
 function moderator(userId) {
